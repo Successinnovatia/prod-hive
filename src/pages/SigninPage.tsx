@@ -157,7 +157,7 @@ const SigninPage = () => {
                     Remember me
                   </label>
                 </div>
-                <Link to="/forgot-password" className="text-sm text-orange-600 hover:text-orange-700">
+                <Link to="#" className="text-sm text-orange-600 hover:text-orange-700">
                   Forgot password?
                 </Link>
               </div>

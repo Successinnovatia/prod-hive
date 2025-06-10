@@ -1,38 +1,43 @@
-
-import { Target, Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Youtube } from 'lucide-react';
+import {
+  Target,
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Twitter,
+  Instagram,
+  Youtube,
+} from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const quickLinks = [
-    { name: 'About Us', href: '/about' },
-    { name: 'Program Details', href: '/#program' },
-    { name: 'Community', href: '/#community' },
-    { name: 'Success Stories', href: '/#success' },
-    { name: 'Resources', href: '#resources' },
-    { name: 'Contact', href: '/support' }
+    { name: "About Us", href: "/about" },
+    { name: "Resources", href: "/resources" },
+    { name: "Contact", href: "/support" },
   ];
 
   const programs = [
-    { name: '12-Week Transition Program', href: '#program' },
-    { name: 'PM Mentorship', href: '#mentorship' },
-    { name: 'Corporate Training', href: '#corporate' },
-    { name: 'Workshops & Events', href: '#events' },
-    { name: 'Career Services', href: '#careers' }
+    { name: "12-Week Transition Program", href: "#program" },
+    { name: "Program Details", href: "/#program" },
+    { name: "Success Stories", href: "/#success" },
+    { name: "Community", href: "/#community" },
   ];
 
   const resources = [
-    { name: 'Templates & Tools', href: '/templates' },
-    { name: 'Learning Hub', href: '/learning' },
-    { name: 'Case Studies', href: '/learning#case-studies' },
-    { name: 'Interactive Tools', href: '/tools' },
-    { name: 'Job Board', href: '/jobs' },
-    { name: 'Salary Guide', href: '/salary-guide' }
+    { name: "Templates & Tools", href: "/templates" },
+    { name: "Learning Hub", href: "/learning" },
+    { name: "Case Studies", href: "/learning#case-studies" },
+    { name: "Interactive Tools", href: "/tools" },
+    { name: "Job Board", href: "/jobs" },
+    { name: "Salary Guide", href: "/salary-guide" },
   ];
 
   const socialLinks = [
-    { icon: <Linkedin className="h-5 w-5" />, href: '#', name: 'LinkedIn' },
-    { icon: <Twitter className="h-5 w-5" />, href: '#', name: 'Twitter' },
-    { icon: <Instagram className="h-5 w-5" />, href: '#', name: 'Instagram' },
-    { icon: <Youtube className="h-5 w-5" />, href: '#', name: 'YouTube' }
+    { icon: <Linkedin className="h-5 w-5" />, href: "#", name: "LinkedIn" },
+    { icon: <Twitter className="h-5 w-5" />, href: "#", name: "Twitter" },
+    { icon: <Instagram className="h-5 w-5" />, href: "#", name: "Instagram" },
+    { icon: <Youtube className="h-5 w-5" />, href: "#", name: "YouTube" },
   ];
 
   return (
@@ -50,8 +55,9 @@ const Footer = () => {
                 <span className="text-xl font-bold">ProdHive</span>
               </div>
               <p className="text-gray-400 mb-6 leading-relaxed">
-                Empowering African tech professionals to successfully transition into product management 
-                roles. Join our community of 500+ product managers across the continent.
+                Empowering African tech professionals to successfully transition
+                into product management roles. Join our community of 500+
+                product managers across the continent.
               </p>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
@@ -75,12 +81,12 @@ const Footer = () => {
               <ul className="space-y-3">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
-                    <a
-                      href={link.href}
+                    <Link
+                      to={link.href}
                       className="text-gray-400 hover:text-orange-500 transition-colors duration-200"
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -109,12 +115,12 @@ const Footer = () => {
               <ul className="space-y-3">
                 {resources.map((resource, index) => (
                   <li key={index}>
-                    <a
-                      href={resource.href}
+                    <Link
+                      to={resource.href}
                       className="text-gray-400 hover:text-orange-500 transition-colors duration-200"
                     >
                       {resource.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -127,7 +133,8 @@ const Footer = () => {
           <div className="text-center max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold mb-4">Stay Updated</h3>
             <p className="text-gray-400 mb-6">
-              Get the latest insights, job opportunities, and program updates delivered to your inbox.
+              Get the latest insights, job opportunities, and program updates
+              delivered to your inbox.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
@@ -150,18 +157,27 @@ const Footer = () => {
                 © 2025 ProdHive. All rights reserved.
               </p>
               <div className="flex space-x-6 text-sm">
-                <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors duration-200">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-orange-500 transition-colors duration-200"
+                >
                   Privacy Policy
                 </a>
-                <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors duration-200">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-orange-500 transition-colors duration-200"
+                >
                   Terms of Service
                 </a>
-                <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors duration-200">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-orange-500 transition-colors duration-200"
+                >
                   Cookie Policy
                 </a>
               </div>
             </div>
-            
+
             <div className="flex items-center space-x-4">
               <span className="text-gray-400 text-sm">Follow us:</span>
               <div className="flex space-x-3">
@@ -184,7 +200,8 @@ const Footer = () => {
         <div className="border-t border-gray-800 py-6">
           <div className="text-center">
             <p className="text-gray-400 text-sm">
-              🌍 Proudly serving product managers across Africa • Building the future of African tech
+              🌍 Proudly serving product managers across Africa • Building the
+              future of African tech
             </p>
           </div>
         </div>

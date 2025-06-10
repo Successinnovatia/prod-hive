@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Menu, X, Target, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,42 +51,42 @@ const Header = () => {
                     {isResourcesOpen && (
                       <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2">
                         {item.dropdown.map((dropdownItem) => (
-                          <a
+                          <Link
                             key={dropdownItem.name}
-                            href={dropdownItem.href}
+                            to={dropdownItem.href}
                             className="block px-4 py-2 text-gray-700 hover:text-orange-600 hover:bg-gray-50 transition-colors duration-200"
                           >
                             {dropdownItem.name}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     )}
                   </div>
                 ) : (
-                  <a
-                    href={item.href}
+                  <Link
+                    to={item.href}
                     className="text-gray-700 hover:text-orange-600 font-medium transition-colors duration-200"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 )}
               </div>
             ))}
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <a 
-              href="/signin"
+            <Link
+              to="/signin"
               className="text-gray-700 hover:text-orange-600 font-medium transition-colors duration-200"
             >
               Sign In
-            </a>
-            <a 
-              href="/register"
+            </Link>
+            <Link
+              to="/register"
               className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors duration-200"
             >
               Join Program
-            </a>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -107,44 +108,44 @@ const Header = () => {
             <div className="space-y-2">
               {navigation.map((item) => (
                 <div key={item.name}>
-                  <a
-                    href={item.href}
+                  <Link
+                    to={item.href}
                     className="block px-4 py-2 text-gray-700 hover:text-orange-600 hover:bg-gray-50 rounded-lg transition-colors duration-200"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                   {item.dropdown && (
                     <div className="ml-4 space-y-1">
                       {item.dropdown.map((dropdownItem) => (
-                        <a
+                        <Link
                           key={dropdownItem.name}
-                          href={dropdownItem.href}
+                          to={dropdownItem.href}
                           className="block px-4 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-gray-50 rounded-lg transition-colors duration-200"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           {dropdownItem.name}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   )}
                 </div>
               ))}
               <div className="px-4 pt-4 space-y-2">
-                <a 
-                  href="/signin"
+                <Link 
+                  to="/signin"
                   className="block w-full text-left text-gray-700 hover:text-orange-600 font-medium py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Sign In
-                </a>
-                <a 
-                  href="/register"
+                </Link>
+                <Link
+                  to="/register"
                   className="block w-full bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors duration-200 text-center"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Join Program
-                </a>
+                </Link>
               </div>
             </div>
           </div>
