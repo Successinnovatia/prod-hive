@@ -177,7 +177,7 @@ const ResourcesPage = () => {
               Access our comprehensive collection of templates, guides, and tools specifically 
               designed for African product managers and those transitioning into PM roles.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-2xl mx-auto">
               <div className="relative flex-1">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
                 <input

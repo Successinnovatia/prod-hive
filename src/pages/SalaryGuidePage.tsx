@@ -946,7 +946,7 @@ const SalaryGuidePage = () => {
             better offers, and connect with top companies across Africa.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
               onClick={handleDownloadGuide}
               className="bg-cta-foreground text-primary px-8 py-3 rounded-lg hover:bg-accent transition-colors duration-300 font-semibold flex items-center space-x-2"

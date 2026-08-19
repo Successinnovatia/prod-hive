@@ -360,7 +360,7 @@ const LearningPage = () => {
               Master product management with courses, case studies, and guides
               specifically designed for African markets and emerging economies.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-2xl mx-auto">
               <div className="relative flex-1">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
                 <input
@@ -770,7 +770,7 @@ const LearningPage = () => {
             through our comprehensive learning programs designed for African
             markets.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link to="/register">
               <button className="bg-cta-foreground text-primary px-8 py-3 rounded-lg hover:bg-accent transition-colors duration-200 font-semibold flex items-center space-x-2">
                 <Award className="h-5 w-5" />

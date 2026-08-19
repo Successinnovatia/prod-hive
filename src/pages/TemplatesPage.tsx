@@ -269,7 +269,7 @@ const TemplatesPage = () => {
               for African product managers. Save time and ensure you're
               following best practices for African markets.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-2xl mx-auto">
               <div className="relative flex-1">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
                 <input
@@ -488,7 +488,7 @@ const TemplatesPage = () => {
             create custom templates tailored to your specific needs and market
             requirements.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link to="/support">
               <button className="bg-cta-foreground text-primary px-8 py-3 rounded-lg hover:bg-accent transition-colors duration-200 font-semibold">
                 Request Custom Template

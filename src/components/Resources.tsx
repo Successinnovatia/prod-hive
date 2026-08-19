@@ -169,7 +169,7 @@ const Resources = () => {
             Access hundreds of templates, interactive tools, and guides. Contribute your own resources 
             and help the community grow.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a 
               href="/resources"
               className="bg-card text-primary px-6 py-3 rounded-lg hover:bg-muted transition-colors duration-200 font-semibold flex items-center space-x-2"

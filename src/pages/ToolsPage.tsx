@@ -614,7 +614,7 @@ const ToolsPage = () => {
             data-driven decisions and build successful products across African
             markets.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link to="/register">
               <button className="bg-cta-foreground text-primary px-8 py-3 rounded-lg hover:bg-accent transition-colors duration-200 font-semibold flex items-center space-x-2">
                 <Zap className="h-5 w-5" />

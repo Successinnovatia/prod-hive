@@ -975,7 +975,7 @@ const JobBoardPage = () => {
             Join our community to get exclusive job opportunities, career
             guidance, and connect with hiring managers across Africa.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link to="/register">
               <button className="bg-cta-foreground text-primary px-8 py-3 rounded-lg hover:bg-accent transition-colors duration-200 font-semibold flex items-center space-x-2">
                 <Award className="h-5 w-5" />

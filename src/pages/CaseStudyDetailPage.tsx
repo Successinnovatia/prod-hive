@@ -2698,7 +2698,7 @@ const CaseStudyDetailPage = () => {
               Access detailed metrics, frameworks, and actionable insights for
               your product management practice.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button
                 onClick={() => handleDownloadClick("Complete Case Study")}
                 className="bg-cta-foreground text-primary px-6 py-3 rounded-full hover:bg-accent transition-colors font-semibold"

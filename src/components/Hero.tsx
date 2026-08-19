@@ -20,7 +20,7 @@ const Hero = () => {
             network, and mentorship you need to successfully transition from any
             tech role to product management.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link to="/register">
               <button className="bg-primary text-primary-foreground px-8 py-4 rounded-lg hover:bg-primary/90 shadow-glow transition-all duration-180 flex items-center justify-center space-x-2">
                 <span>Start Your Journey</span>

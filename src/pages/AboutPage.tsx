@@ -294,7 +294,7 @@ const AboutPage = () => {
               Africa, providing the education, resources, and network needed to
               succeed in the global tech ecosystem.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link to="/register">
                 <button className="bg-primary text-primary-foreground px-8 py-4 rounded-lg hover:bg-primary/90 shadow-glow transition-all duration-180 flex items-center justify-center space-x-2">
                   <span>Join Our Mission</span>
@@ -645,7 +645,7 @@ const AboutPage = () => {
             advance your PM career, or contribute to the African tech ecosystem,
             there's a place for you in our community.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link to="/register">
               <button className="bg-card text-primary px-8 py-3 rounded-lg hover:bg-muted transition-colors duration-200 font-semibold flex items-center space-x-2">
                 <Users className="h-5 w-5" />
