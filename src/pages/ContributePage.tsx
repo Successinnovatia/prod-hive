@@ -97,32 +97,32 @@ const ContributePage = () => {
     "Build your personal brand and professional network",
     "Help fellow PMs succeed in their careers",
     "Receive feedback and engagement from the community",
-    "Potential speaking opportunities at ProdHive events",
+    "Potential speaking opportunities at TechPod events",
     "Featured author spotlight in our newsletter",
   ];
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-white" id="#">
+      <div className="min-h-screen bg-background" id="#">
         <Header />
         <div className="pt-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div className="text-center">
-              <div className="bg-green-50 p-8 rounded-2xl">
-                <CheckCircle className="h-16 w-16 text-green-600 mx-auto mb-4" />
-                <h1 className="text-3xl font-bold text-gray-900 mb-4">
+              <div className="bg-success/10 p-8 rounded-2xl">
+                <CheckCircle className="h-16 w-16 text-success mx-auto mb-4" />
+                <h1 className="text-3xl font-bold text-foreground mb-4">
                   Thank You for Contributing!
                 </h1>
-                <p className="text-xl text-gray-600 mb-6">
+                <p className="text-xl text-muted-foreground mb-6">
                   Your resource has been submitted for review. Our team will
                   evaluate it within 3-5 business days and notify you once it's
                   approved and published.
                 </p>
-                <div className="bg-white p-6 rounded-lg border border-green-200 mb-6">
-                  <h3 className="font-semibold text-gray-900 mb-2">
+                <div className="bg-card p-6 rounded-lg border border-success/30 mb-6">
+                  <h3 className="font-semibold text-foreground mb-2">
                     What happens next?
                   </h3>
-                  <ul className="text-left text-gray-600 space-y-2">
+                  <ul className="text-left text-muted-foreground space-y-2">
                     <li>• Our editorial team reviews your submission</li>
                     <li>
                       • We may reach out for clarifications or improvements
@@ -137,11 +137,11 @@ const ContributePage = () => {
                 </div>
                 <button
                   onClick={() => setIsSubmitted(false)}
-                  className="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors duration-200 mr-4"
+                  className="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 mr-4"
                 >
                   Submit Another Resource
                 </button>
-                <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors duration-200">
+                <button className="border border-input text-foreground px-6 py-3 rounded-lg hover:bg-accent transition-colors duration-200">
                   View My Submissions
                 </button>
               </div>
@@ -154,18 +154,18 @@ const ContributePage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       <Header />
 
       <div className="pt-20">
         {/* Hero Section */}
-        <section className="py-12 bg-gradient-to-br from-blue-50 to-purple-50">
+        <section className="py-12 bg-gradient-to-br from-background via-accent to-secondary">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 Contribute to the Community
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
                 Share your knowledge and help fellow product managers across
                 Africa succeed. Contribute templates, guides, case studies, and
                 more to our growing resource library.
@@ -178,22 +178,22 @@ const ContributePage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Main Form */}
             <div className="lg:col-span-2">
-              <div className="bg-white border border-gray-200 rounded-xl p-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <div className="bg-card border border-border rounded-xl p-8">
+                <h2 className="text-2xl font-bold text-foreground mb-6">
                   Submit Your Resource
                 </h2>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Basic Information */}
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                    <h3 className="text-lg font-semibold text-foreground mb-4">
                       Basic Information
                     </h3>
                     <div className="space-y-4">
                       <div>
                         <label
                           htmlFor="title"
-                          className="block text-sm font-medium text-gray-700 mb-2"
+                          className="block text-sm font-medium text-foreground mb-2"
                         >
                           Resource Title *
                         </label>
@@ -204,7 +204,7 @@ const ContributePage = () => {
                           required
                           value={formData.title}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                          className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                           placeholder="e.g., Product Requirements Document Template for African Markets"
                         />
                       </div>
@@ -212,7 +212,7 @@ const ContributePage = () => {
                       <div>
                         <label
                           htmlFor="description"
-                          className="block text-sm font-medium text-gray-700 mb-2"
+                          className="block text-sm font-medium text-foreground mb-2"
                         >
                           Short Description *
                         </label>
@@ -223,7 +223,7 @@ const ContributePage = () => {
                           rows={3}
                           value={formData.description}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                          className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                           placeholder="Brief description of what this resource provides..."
                         />
                       </div>
@@ -232,7 +232,7 @@ const ContributePage = () => {
                         <div>
                           <label
                             htmlFor="category"
-                            className="block text-sm font-medium text-gray-700 mb-2"
+                            className="block text-sm font-medium text-foreground mb-2"
                           >
                             Category *
                           </label>
@@ -242,7 +242,7 @@ const ContributePage = () => {
                             required
                             value={formData.category}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                            className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                           >
                             <option value="">Select a category</option>
                             {categories.map((category) => (
@@ -256,7 +256,7 @@ const ContributePage = () => {
                         <div>
                           <label
                             htmlFor="type"
-                            className="block text-sm font-medium text-gray-700 mb-2"
+                            className="block text-sm font-medium text-foreground mb-2"
                           >
                             Resource Type *
                           </label>
@@ -266,7 +266,7 @@ const ContributePage = () => {
                             required
                             value={formData.type}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                            className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                           >
                             {resourceTypes.map((type) => (
                               <option key={type.id} value={type.id}>
@@ -281,7 +281,7 @@ const ContributePage = () => {
                         <div>
                           <label
                             htmlFor="format"
-                            className="block text-sm font-medium text-gray-700 mb-2"
+                            className="block text-sm font-medium text-foreground mb-2"
                           >
                             Format *
                           </label>
@@ -292,7 +292,7 @@ const ContributePage = () => {
                             required
                             value={formData.format}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                            className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                             placeholder="e.g., Google Docs, PDF, Figma"
                           />
                         </div>
@@ -300,7 +300,7 @@ const ContributePage = () => {
                         <div>
                           <label
                             htmlFor="tags"
-                            className="block text-sm font-medium text-gray-700 mb-2"
+                            className="block text-sm font-medium text-foreground mb-2"
                           >
                             Tags *
                           </label>
@@ -311,10 +311,10 @@ const ContributePage = () => {
                             required
                             value={formData.tags}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                            className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                             placeholder="e.g., PRD, Documentation, Planning"
                           />
-                          <p className="text-sm text-gray-500 mt-1">
+                          <p className="text-sm text-muted-foreground mt-1">
                             Separate tags with commas
                           </p>
                         </div>
@@ -324,17 +324,17 @@ const ContributePage = () => {
 
                   {/* File Upload */}
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                    <h3 className="text-lg font-semibold text-foreground mb-4">
                       Upload Files
                     </h3>
-                    <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-orange-500 transition-colors duration-200">
-                      <Upload className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+                    <div className="border-2 border-dashed border-input rounded-lg p-6 text-center hover:border-primary transition-colors duration-200">
+                      <Upload className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                       <div className="mb-4">
                         <label htmlFor="file-upload" className="cursor-pointer">
-                          <span className="text-orange-600 hover:text-orange-700 font-medium">
+                          <span className="text-primary hover:text-primary font-medium">
                             Click to upload
                           </span>
-                          <span className="text-gray-600">
+                          <span className="text-muted-foreground">
                             {" "}
                             or drag and drop
                           </span>
@@ -348,19 +348,19 @@ const ContributePage = () => {
                           accept=".pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.zip,.fig"
                         />
                       </div>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-muted-foreground">
                         PDF, DOC, PPT, XLS, ZIP, Figma files up to 50MB each
                       </p>
                       {files.length > 0 && (
                         <div className="mt-4 text-left">
-                          <h4 className="font-medium text-gray-900 mb-2">
+                          <h4 className="font-medium text-foreground mb-2">
                             Selected Files:
                           </h4>
                           <ul className="space-y-1">
                             {files.map((file, index) => (
                               <li
                                 key={index}
-                                className="text-sm text-gray-600 flex items-center"
+                                className="text-sm text-muted-foreground flex items-center"
                               >
                                 <FileText className="h-4 w-4 mr-2" />
                                 {file.name} (
@@ -375,14 +375,14 @@ const ContributePage = () => {
 
                   {/* Detailed Information */}
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                    <h3 className="text-lg font-semibold text-foreground mb-4">
                       Detailed Information
                     </h3>
                     <div className="space-y-4">
                       <div>
                         <label
                           htmlFor="whatYouGet"
-                          className="block text-sm font-medium text-gray-700 mb-2"
+                          className="block text-sm font-medium text-foreground mb-2"
                         >
                           What Users Will Get *
                         </label>
@@ -393,7 +393,7 @@ const ContributePage = () => {
                           rows={4}
                           value={formData.whatYouGet}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                          className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                           placeholder="List what's included in this resource (one item per line)"
                         />
                       </div>
@@ -401,7 +401,7 @@ const ContributePage = () => {
                       <div>
                         <label
                           htmlFor="requirements"
-                          className="block text-sm font-medium text-gray-700 mb-2"
+                          className="block text-sm font-medium text-foreground mb-2"
                         >
                           Requirements
                         </label>
@@ -411,7 +411,7 @@ const ContributePage = () => {
                           rows={3}
                           value={formData.requirements}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                          className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                           placeholder="What users need to use this resource effectively"
                         />
                       </div>
@@ -419,7 +419,7 @@ const ContributePage = () => {
                       <div>
                         <label
                           htmlFor="targetAudience"
-                          className="block text-sm font-medium text-gray-700 mb-2"
+                          className="block text-sm font-medium text-foreground mb-2"
                         >
                           Target Audience *
                         </label>
@@ -430,7 +430,7 @@ const ContributePage = () => {
                           rows={2}
                           value={formData.targetAudience}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                          className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                           placeholder="Who is this resource designed for?"
                         />
                       </div>
@@ -439,7 +439,7 @@ const ContributePage = () => {
 
                   {/* Author Information */}
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                    <h3 className="text-lg font-semibold text-foreground mb-4">
                       Author Information
                     </h3>
                     <div className="space-y-4">
@@ -447,7 +447,7 @@ const ContributePage = () => {
                         <div>
                           <label
                             htmlFor="authorName"
-                            className="block text-sm font-medium text-gray-700 mb-2"
+                            className="block text-sm font-medium text-foreground mb-2"
                           >
                             Your Name *
                           </label>
@@ -458,14 +458,14 @@ const ContributePage = () => {
                             required
                             value={formData.authorName}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                            className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                           />
                         </div>
 
                         <div>
                           <label
                             htmlFor="authorRole"
-                            className="block text-sm font-medium text-gray-700 mb-2"
+                            className="block text-sm font-medium text-foreground mb-2"
                           >
                             Your Role *
                           </label>
@@ -476,7 +476,7 @@ const ContributePage = () => {
                             required
                             value={formData.authorRole}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                            className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                             placeholder="e.g., Senior Product Manager"
                           />
                         </div>
@@ -485,7 +485,7 @@ const ContributePage = () => {
                       <div>
                         <label
                           htmlFor="authorCompany"
-                          className="block text-sm font-medium text-gray-700 mb-2"
+                          className="block text-sm font-medium text-foreground mb-2"
                         >
                           Company/Organization
                         </label>
@@ -495,14 +495,14 @@ const ContributePage = () => {
                           name="authorCompany"
                           value={formData.authorCompany}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                          className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                         />
                       </div>
 
                       <div>
                         <label
                           htmlFor="authorBio"
-                          className="block text-sm font-medium text-gray-700 mb-2"
+                          className="block text-sm font-medium text-foreground mb-2"
                         >
                           Short Bio *
                         </label>
@@ -513,7 +513,7 @@ const ContributePage = () => {
                           rows={3}
                           value={formData.authorBio}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                          className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                           placeholder="Brief description of your background and expertise"
                         />
                       </div>
@@ -522,7 +522,7 @@ const ContributePage = () => {
 
                   <button
                     type="submit"
-                    className="w-full bg-orange-600 text-white px-6 py-4 rounded-lg hover:bg-orange-700 transition-colors duration-200 font-semibold"
+                    className="w-full bg-primary text-primary-foreground px-6 py-4 rounded-lg hover:bg-primary/90 transition-colors duration-200 font-semibold"
                   >
                     Submit Resource for Review
                   </button>
@@ -534,23 +534,23 @@ const ContributePage = () => {
             <div className="lg:col-span-1">
               <div className="sticky top-24 space-y-6">
                 {/* Guidelines */}
-                <div className="bg-white border border-gray-200 rounded-xl p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                <div className="bg-card border border-border rounded-xl p-6">
+                  <h3 className="text-lg font-semibold text-foreground mb-4">
                     Submission Guidelines
                   </h3>
                   <div className="space-y-4">
                     {guidelines.map((guideline, index) => (
                       <div key={index} className="flex items-start gap-3">
-                        <div className="bg-orange-100 p-2 rounded-lg flex-shrink-0">
-                          <div className="text-orange-600">
+                        <div className="bg-primary/10 p-2 rounded-lg flex-shrink-0">
+                          <div className="text-primary">
                             {guideline.icon}
                           </div>
                         </div>
                         <div>
-                          <h4 className="font-medium text-gray-900 mb-1">
+                          <h4 className="font-medium text-foreground mb-1">
                             {guideline.title}
                           </h4>
-                          <p className="text-sm text-gray-600">
+                          <p className="text-sm text-muted-foreground">
                             {guideline.description}
                           </p>
                         </div>
@@ -560,17 +560,17 @@ const ContributePage = () => {
                 </div>
 
                 {/* Benefits */}
-                <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                <div className="bg-gradient-to-br from-accent to-secondary rounded-xl p-6">
+                  <h3 className="text-lg font-semibold text-foreground mb-4">
                     Why Contribute?
                   </h3>
                   <ul className="space-y-2">
                     {benefits.map((benefit, index) => (
                       <li
                         key={index}
-                        className="flex items-start gap-2 text-sm text-gray-700"
+                        className="flex items-start gap-2 text-sm text-foreground"
                       >
-                        <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-success mt-0.5 flex-shrink-0" />
                         {benefit}
                       </li>
                     ))}
@@ -578,15 +578,15 @@ const ContributePage = () => {
                 </div>
 
                 {/* Contact */}
-                <div className="bg-white border border-gray-200 rounded-xl p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                <div className="bg-card border border-border rounded-xl p-6">
+                  <h3 className="text-lg font-semibold text-foreground mb-4">
                     Need Help?
                   </h3>
-                  <p className="text-gray-600 text-sm mb-4">
+                  <p className="text-muted-foreground text-sm mb-4">
                     Have questions about contributing? Our team is here to help.
                   </p>
                   <Link to="/support">
-                    <button className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm">
+                    <button className="w-full bg-primary text-primary-foreground py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200 text-sm">
                       Contact Support
                     </button>
                   </Link>

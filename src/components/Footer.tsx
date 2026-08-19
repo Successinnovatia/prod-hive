@@ -41,7 +41,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-footer text-footer-foreground border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-16">
@@ -49,28 +49,28 @@ const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-2">
               <div className="flex items-center space-x-2 mb-6">
-                <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-2 rounded-lg">
+                <div className="bg-tech-gradient p-2 rounded-lg">
                   <Target className="h-6 w-6 text-white" />
                 </div>
-                <span className="text-xl font-bold">ProdHive</span>
+                <span className="text-xl font-bold">TechPod</span>
               </div>
-              <p className="text-gray-400 mb-6 leading-relaxed">
+              <p className="text-footer-foreground/70 mb-6 leading-relaxed">
                 Empowering African tech professionals to successfully transition
                 into product management roles. Join our community of 500+
                 product managers across the continent.
               </p>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
-                  <Mail className="h-4 w-4 text-orange-500" />
-                  <span className="text-gray-400">hello@pmafrica.com</span>
+                  <Mail className="h-4 w-4 text-primary" />
+                  <span className="text-footer-foreground/70">hello@pmafrica.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Phone className="h-4 w-4 text-orange-500" />
-                  <span className="text-gray-400">+234 800 123 4567</span>
+                  <Phone className="h-4 w-4 text-primary" />
+                  <span className="text-footer-foreground/70">+234 800 123 4567</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <MapPin className="h-4 w-4 text-orange-500" />
-                  <span className="text-gray-400">Lagos • Nairobi • Cairo</span>
+                  <MapPin className="h-4 w-4 text-primary" />
+                  <span className="text-footer-foreground/70">Lagos • Nairobi • Cairo</span>
                 </div>
               </div>
             </div>
@@ -83,7 +83,7 @@ const Footer = () => {
                   <li key={index}>
                     <Link
                       to={link.href}
-                      className="text-gray-400 hover:text-orange-500 transition-colors duration-200"
+                      className="text-footer-foreground/70 hover:text-primary transition-colors duration-200"
                     >
                       {link.name}
                     </Link>
@@ -100,7 +100,7 @@ const Footer = () => {
                   <li key={index}>
                     <a
                       href={program.href}
-                      className="text-gray-400 hover:text-orange-500 transition-colors duration-200"
+                      className="text-footer-foreground/70 hover:text-primary transition-colors duration-200"
                     >
                       {program.name}
                     </a>
@@ -117,7 +117,7 @@ const Footer = () => {
                   <li key={index}>
                     <Link
                       to={resource.href}
-                      className="text-gray-400 hover:text-orange-500 transition-colors duration-200"
+                      className="text-footer-foreground/70 hover:text-primary transition-colors duration-200"
                     >
                       {resource.name}
                     </Link>
@@ -129,10 +129,10 @@ const Footer = () => {
         </div>
 
         {/* Newsletter Signup */}
-        <div className="border-t border-gray-800 py-12">
+        <div className="border-t border-footer-foreground/10 py-12">
           <div className="text-center max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold mb-4">Stay Updated</h3>
-            <p className="text-gray-400 mb-6">
+            <p className="text-footer-foreground/70 mb-6">
               Get the latest insights, job opportunities, and program updates
               delivered to your inbox.
             </p>
@@ -140,9 +140,9 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                className="flex-1 px-4 py-3 rounded-lg bg-footer-foreground/5 border border-footer-foreground/10 text-footer-foreground placeholder:text-footer-foreground/50 focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring"
               />
-              <button className="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors duration-200 font-semibold whitespace-nowrap">
+              <button className="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 shadow-glow transition-all duration-180 font-semibold whitespace-nowrap">
                 Subscribe
               </button>
             </div>
@@ -150,28 +150,28 @@ const Footer = () => {
         </div>
 
         {/* Bottom Footer */}
-        <div className="border-t border-gray-800 py-8">
+        <div className="border-t border-footer-foreground/10 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
-              <p className="text-gray-400 text-sm">
-                © 2025 ProdHive. All rights reserved.
+              <p className="text-footer-foreground/70 text-sm">
+                © 2025 TechPod. All rights reserved.
               </p>
               <div className="flex space-x-6 text-sm">
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-orange-500 transition-colors duration-200"
+                  className="text-footer-foreground/70 hover:text-primary transition-colors duration-200"
                 >
                   Privacy Policy
                 </a>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-orange-500 transition-colors duration-200"
+                  className="text-footer-foreground/70 hover:text-primary transition-colors duration-200"
                 >
                   Terms of Service
                 </a>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-orange-500 transition-colors duration-200"
+                  className="text-footer-foreground/70 hover:text-primary transition-colors duration-200"
                 >
                   Cookie Policy
                 </a>
@@ -179,13 +179,13 @@ const Footer = () => {
             </div>
 
             <div className="flex items-center space-x-4">
-              <span className="text-gray-400 text-sm">Follow us:</span>
+              <span className="text-footer-foreground/70 text-sm">Follow us:</span>
               <div className="flex space-x-3">
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
                     href={social.href}
-                    className="bg-gray-800 p-2 rounded-lg text-gray-400 hover:text-orange-500 hover:bg-gray-700 transition-all duration-200"
+                    className="bg-footer-foreground/5 p-2 rounded-lg text-footer-foreground/70 hover:text-white hover:bg-primary transition-all duration-180"
                     aria-label={social.name}
                   >
                     {social.icon}
@@ -197,9 +197,9 @@ const Footer = () => {
         </div>
 
         {/* Africa Pride Section */}
-        <div className="border-t border-gray-800 py-6">
+        <div className="border-t border-footer-foreground/10 py-6">
           <div className="text-center">
-            <p className="text-gray-400 text-sm">
+            <p className="text-footer-foreground/70 text-sm">
               🌍 Proudly serving product managers across Africa • Building the
               future of African tech
             </p>

@@ -75,14 +75,14 @@ const CourseModal: React.FC<CourseModalProps> = ({ isOpen, onClose, course, mode
 
   if (mode === 'preview') {
     return (
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-        <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-          <div className="flex items-center justify-between p-6 border-b border-gray-200">
+      <div className="fixed inset-0 bg-foreground/50 flex items-center justify-center z-50 p-4">
+        <div className="bg-card rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+          <div className="flex items-center justify-between p-6 border-b border-border">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900">Course Preview</h2>
-              <p className="text-gray-600">{course.title}</p>
+              <h2 className="text-2xl font-bold text-foreground">Course Preview</h2>
+              <p className="text-muted-foreground">{course.title}</p>
             </div>
-            <button onClick={onClose} className="text-gray-400 hover:text-gray-600">
+            <button onClick={onClose} className="text-muted-foreground hover:text-muted-foreground">
               <X className="h-6 w-6" />
             </button>
           </div>
@@ -96,39 +96,39 @@ const CourseModal: React.FC<CourseModalProps> = ({ isOpen, onClose, course, mode
                   alt={course.title}
                   className="w-full h-48 object-cover rounded-lg mb-6"
                 />
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{course.title}</h3>
-                <p className="text-gray-600 mb-6">{course.description}</p>
+                <h3 className="text-xl font-bold text-foreground mb-4">{course.title}</h3>
+                <p className="text-muted-foreground mb-6">{course.description}</p>
                 
                 <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="bg-blue-50 p-4 rounded-lg text-center">
-                    <Clock className="h-6 w-6 text-blue-600 mx-auto mb-2" />
-                    <div className="font-semibold text-gray-900">{course.duration}</div>
-                    <div className="text-sm text-gray-600">Duration</div>
+                  <div className="bg-accent p-4 rounded-lg text-center">
+                    <Clock className="h-6 w-6 text-primary mx-auto mb-2" />
+                    <div className="font-semibold text-foreground">{course.duration}</div>
+                    <div className="text-sm text-muted-foreground">Duration</div>
                   </div>
-                  <div className="bg-green-50 p-4 rounded-lg text-center">
-                    <BookOpen className="h-6 w-6 text-green-600 mx-auto mb-2" />
-                    <div className="font-semibold text-gray-900">{course.lessons}</div>
-                    <div className="text-sm text-gray-600">Lessons</div>
+                  <div className="bg-success/10 p-4 rounded-lg text-center">
+                    <BookOpen className="h-6 w-6 text-success mx-auto mb-2" />
+                    <div className="font-semibold text-foreground">{course.lessons}</div>
+                    <div className="text-sm text-muted-foreground">Lessons</div>
                   </div>
                   <div className="bg-purple-50 p-4 rounded-lg text-center">
                     <Users className="h-6 w-6 text-purple-600 mx-auto mb-2" />
-                    <div className="font-semibold text-gray-900">{course.students.toLocaleString()}</div>
-                    <div className="text-sm text-gray-600">Students</div>
+                    <div className="font-semibold text-foreground">{course.students.toLocaleString()}</div>
+                    <div className="text-sm text-muted-foreground">Students</div>
                   </div>
                   <div className="bg-yellow-50 p-4 rounded-lg text-center">
                     <Star className="h-6 w-6 text-yellow-600 mx-auto mb-2" />
-                    <div className="font-semibold text-gray-900">{course.rating}</div>
-                    <div className="text-sm text-gray-600">Rating</div>
+                    <div className="font-semibold text-foreground">{course.rating}</div>
+                    <div className="text-sm text-muted-foreground">Rating</div>
                   </div>
                 </div>
 
                 <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-3">What You'll Learn:</h4>
+                  <h4 className="font-semibold text-foreground mb-3">What You'll Learn:</h4>
                   <div className="space-y-2">
                     {course.topics.slice(0, 4).map((topic, index) => (
                       <div key={index} className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                        <span className="text-gray-700">{topic}</span>
+                        <CheckCircle className="h-4 w-4 text-success mr-2" />
+                        <span className="text-foreground">{topic}</span>
                       </div>
                     ))}
                   </div>
@@ -136,7 +136,7 @@ const CourseModal: React.FC<CourseModalProps> = ({ isOpen, onClose, course, mode
 
                 <button 
                   onClick={handleEnroll}
-                  className="w-full bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition-colors duration-200"
+                  className="w-full bg-primary text-primary-foreground py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200"
                 >
                   Enroll in Course - {course.price}
                 </button>
@@ -144,27 +144,27 @@ const CourseModal: React.FC<CourseModalProps> = ({ isOpen, onClose, course, mode
 
               {/* Curriculum Preview */}
               <div>
-                <h4 className="font-semibold text-gray-900 mb-4">Course Curriculum</h4>
+                <h4 className="font-semibold text-foreground mb-4">Course Curriculum</h4>
                 <div className="space-y-3">
                   {lessons.slice(0, 6).map((lesson, index) => (
-                    <div key={lesson.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <div key={lesson.id} className="flex items-center justify-between p-3 bg-muted rounded-lg">
                       <div className="flex items-center">
-                        <div className="bg-white p-2 rounded mr-3">
+                        <div className="bg-card p-2 rounded mr-3">
                           {getLessonIcon(lesson.type)}
                         </div>
                         <div>
-                          <div className="font-medium text-gray-900">{lesson.title}</div>
-                          <div className="text-sm text-gray-600">{lesson.duration}</div>
+                          <div className="font-medium text-foreground">{lesson.title}</div>
+                          <div className="text-sm text-muted-foreground">{lesson.duration}</div>
                         </div>
                       </div>
                       {index === 0 && (
-                        <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">
+                        <span className="bg-success/15 text-success px-2 py-1 rounded text-xs">
                           Free Preview
                         </span>
                       )}
                     </div>
                   ))}
-                  <div className="text-center text-gray-500 text-sm">
+                  <div className="text-center text-muted-foreground text-sm">
                     +{lessons.length - 6} more lessons
                   </div>
                 </div>
@@ -177,14 +177,14 @@ const CourseModal: React.FC<CourseModalProps> = ({ isOpen, onClose, course, mode
   }
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-xl max-w-6xl w-full max-h-[90vh] overflow-y-auto">
-        <div className="flex items-center justify-between p-6 border-b border-gray-200">
+    <div className="fixed inset-0 bg-foreground/50 flex items-center justify-center z-50 p-4">
+      <div className="bg-card rounded-xl max-w-6xl w-full max-h-[90vh] overflow-y-auto">
+        <div className="flex items-center justify-between p-6 border-b border-border">
           <div>
-            <h2 className="text-2xl font-bold text-gray-900">{course.title}</h2>
-            <p className="text-gray-600">by {course.instructor}</p>
+            <h2 className="text-2xl font-bold text-foreground">{course.title}</h2>
+            <p className="text-muted-foreground">by {course.instructor}</p>
           </div>
-          <button onClick={onClose} className="text-gray-400 hover:text-gray-600">
+          <button onClick={onClose} className="text-muted-foreground hover:text-muted-foreground">
             <X className="h-6 w-6" />
           </button>
         </div>
@@ -197,14 +197,14 @@ const CourseModal: React.FC<CourseModalProps> = ({ isOpen, onClose, course, mode
                 alt={course.title}
                 className="w-full h-64 object-cover rounded-lg mb-6"
               />
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Start Learning?</h3>
-              <p className="text-gray-600 mb-6">
+              <h3 className="text-2xl font-bold text-foreground mb-4">Ready to Start Learning?</h3>
+              <p className="text-muted-foreground mb-6">
                 Join {course.students.toLocaleString()} other students in this comprehensive course 
                 on {course.title.toLowerCase()}.
               </p>
               <button 
                 onClick={handleEnroll}
-                className="bg-orange-600 text-white px-8 py-3 rounded-lg hover:bg-orange-700 transition-colors duration-200 text-lg font-semibold"
+                className="bg-primary text-primary-foreground px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 text-lg font-semibold"
               >
                 Start Course - {course.price}
               </button>
@@ -215,7 +215,7 @@ const CourseModal: React.FC<CourseModalProps> = ({ isOpen, onClose, course, mode
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Course Content */}
               <div className="lg:col-span-2">
-                <div className="bg-gray-900 rounded-lg p-8 text-center text-white mb-6">
+                <div className="bg-gray-900 rounded-lg p-8 text-center text-primary-foreground mb-6">
                   <Play className="h-16 w-16 mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-2">
                     Lesson {currentLesson}: {lessons[currentLesson - 1]?.title}
@@ -225,7 +225,7 @@ const CourseModal: React.FC<CourseModalProps> = ({ isOpen, onClose, course, mode
                   </p>
                   <button 
                     onClick={() => markLessonComplete(currentLesson)}
-                    className="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition-colors duration-200"
+                    className="bg-primary text-primary-foreground px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200"
                   >
                     {completedLessons.includes(currentLesson) ? 'Lesson Complete' : 'Mark as Complete'}
                   </button>
@@ -234,16 +234,16 @@ const CourseModal: React.FC<CourseModalProps> = ({ isOpen, onClose, course, mode
                 {/* Progress */}
                 <div className="mb-6">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-medium text-gray-700">Course Progress</span>
-                    <span className="text-sm text-gray-500">{completedLessons.length}/{lessons.length} lessons</span>
+                    <span className="text-sm font-medium text-foreground">Course Progress</span>
+                    <span className="text-sm text-muted-foreground">{completedLessons.length}/{lessons.length} lessons</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div className="w-full bg-muted rounded-full h-2">
                     <div 
-                      className="bg-green-500 h-2 rounded-full transition-all duration-300" 
+                      className="bg-primary h-2 rounded-full transition-all duration-300" 
                       style={{ width: `${getProgressPercentage()}%` }}
                     ></div>
                   </div>
-                  <div className="text-sm text-gray-600 mt-1">
+                  <div className="text-sm text-muted-foreground mt-1">
                     {getProgressPercentage().toFixed(0)}% Complete
                   </div>
                 </div>
@@ -251,7 +251,7 @@ const CourseModal: React.FC<CourseModalProps> = ({ isOpen, onClose, course, mode
 
               {/* Lesson List */}
               <div>
-                <h4 className="font-semibold text-gray-900 mb-4">Course Lessons</h4>
+                <h4 className="font-semibold text-foreground mb-4">Course Lessons</h4>
                 <div className="space-y-2">
                   {lessons.map((lesson) => (
                     <div 
@@ -259,16 +259,16 @@ const CourseModal: React.FC<CourseModalProps> = ({ isOpen, onClose, course, mode
                       onClick={() => setCurrentLesson(lesson.id)}
                       className={`p-3 rounded-lg cursor-pointer transition-colors duration-200 ${
                         currentLesson === lesson.id 
-                          ? 'bg-orange-100 border border-orange-200' 
-                          : 'bg-gray-50 hover:bg-gray-100'
+                          ? 'bg-primary/10 border border-primary/30' 
+                          : 'bg-muted hover:bg-accent'
                       }`}
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex items-center">
                           <div className={`p-1 rounded mr-2 ${
                             completedLessons.includes(lesson.id) 
-                              ? 'bg-green-100 text-green-600' 
-                              : 'bg-gray-200 text-gray-600'
+                              ? 'bg-success/15 text-success' 
+                              : 'bg-muted text-muted-foreground'
                           }`}>
                             {completedLessons.includes(lesson.id) ? (
                               <CheckCircle className="h-4 w-4" />
@@ -277,12 +277,12 @@ const CourseModal: React.FC<CourseModalProps> = ({ isOpen, onClose, course, mode
                             )}
                           </div>
                           <div>
-                            <div className="font-medium text-gray-900 text-sm">{lesson.title}</div>
-                            <div className="text-xs text-gray-600">{lesson.duration}</div>
+                            <div className="font-medium text-foreground text-sm">{lesson.title}</div>
+                            <div className="text-xs text-muted-foreground">{lesson.duration}</div>
                           </div>
                         </div>
                         {currentLesson === lesson.id && (
-                          <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full"></div>
                         )}
                       </div>
                     </div>
@@ -290,13 +290,13 @@ const CourseModal: React.FC<CourseModalProps> = ({ isOpen, onClose, course, mode
                 </div>
 
                 {getProgressPercentage() === 100 && (
-                  <div className="mt-6 p-4 bg-green-50 rounded-lg text-center">
-                    <CheckCircle className="h-8 w-8 text-green-500 mx-auto mb-2" />
-                    <h4 className="font-semibold text-green-800">Course Complete!</h4>
-                    <p className="text-sm text-green-600 mb-3">
+                  <div className="mt-6 p-4 bg-success/10 rounded-lg text-center">
+                    <CheckCircle className="h-8 w-8 text-success mx-auto mb-2" />
+                    <h4 className="font-semibold text-success">Course Complete!</h4>
+                    <p className="text-sm text-success mb-3">
                       Congratulations on completing the course!
                     </p>
-                    <button className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200 text-sm">
+                    <button className="bg-green-600 text-primary-foreground px-4 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200 text-sm">
                       Download Certificate
                     </button>
                   </div>

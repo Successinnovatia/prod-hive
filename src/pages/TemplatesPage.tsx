@@ -186,7 +186,7 @@ const TemplatesPage = () => {
       description:
         "Calculate total addressable market (TAM) for your product across African countries",
       icon: <Calculator className="h-8 w-8" />,
-      color: "bg-blue-500",
+      color: "bg-primary",
       features: [
         "54 country database",
         "Economic indicators",
@@ -200,7 +200,7 @@ const TemplatesPage = () => {
       description:
         "Prioritize features based on African market needs and constraints",
       icon: <CheckSquare className="h-8 w-8" />,
-      color: "bg-green-500",
+      color: "bg-primary",
       features: [
         "Impact vs effort matrix",
         "Market-specific scoring",
@@ -214,7 +214,7 @@ const TemplatesPage = () => {
       description:
         "Build custom dashboards for tracking product metrics in African markets",
       icon: <BarChart3 className="h-8 w-8" />,
-      color: "bg-purple-500",
+      color: "bg-primary",
       features: [
         "KPI templates",
         "Market benchmarks",
@@ -228,7 +228,7 @@ const TemplatesPage = () => {
       description:
         "Map and manage stakeholders across different African business environments",
       icon: <Users className="h-8 w-8" />,
-      color: "bg-orange-500",
+      color: "bg-primary",
       features: [
         "Influence mapping",
         "Communication planning",
@@ -254,30 +254,30 @@ const TemplatesPage = () => {
   });
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 md:pt-40 pb-12 bg-gradient-to-br from-blue-50 to-purple-50">
+      <section className="pt-32 md:pt-40 pb-12 bg-gradient-to-br from-background via-accent to-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Templates & Tools
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Ready-to-use templates and interactive tools designed specifically
               for African product managers. Save time and ensure you're
               following best practices for African markets.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto">
               <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
                 <input
                   type="text"
                   placeholder="Search templates and tools..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                  className="w-full pl-10 pr-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                 />
               </div>
             </div>
@@ -286,13 +286,13 @@ const TemplatesPage = () => {
       </section>
 
       {/* Interactive Tools */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-foreground mb-4">
               Interactive Tools
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-muted-foreground">
               Powerful online tools to help you make data-driven decisions for
               African markets
             </p>
@@ -302,22 +302,22 @@ const TemplatesPage = () => {
             {interactiveTools.map((tool) => (
               <div
                 key={tool.id}
-                className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+                className="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer"
               >
                 <div
-                  className={`${tool.color} w-16 h-16 rounded-lg flex items-center justify-center mb-4 text-white`}
+                  className={`${tool.color} w-16 h-16 rounded-lg flex items-center justify-center mb-4 text-primary-foreground`}
                 >
                   {tool.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <h3 className="text-lg font-semibold text-foreground mb-2">
                   {tool.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-4">{tool.description}</p>
+                <p className="text-muted-foreground text-sm mb-4">{tool.description}</p>
                 <ul className="space-y-1 mb-4">
                   {tool.features.map((feature, index) => (
                     <li
                       key={index}
-                      className="text-xs text-gray-500 flex items-center"
+                      className="text-xs text-muted-foreground flex items-center"
                     >
                       <div className="w-1 h-1 bg-gray-400 rounded-full mr-2"></div>
                       {feature}
@@ -325,7 +325,7 @@ const TemplatesPage = () => {
                   ))}
                 </ul>
                 <Link to="/tools">
-                  <button className="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200 flex items-center justify-center space-x-2">
+                  <button className="w-full bg-gray-900 text-primary-foreground py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200 flex items-center justify-center space-x-2">
                     <span>Launch Tool</span>
                     <ArrowRight className="h-4 w-4" />
                   </button>
@@ -337,13 +337,13 @@ const TemplatesPage = () => {
       </section>
 
       {/* Templates Section */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Sidebar Filters */}
             <div className="lg:w-1/4">
-              <div className="bg-white p-6 rounded-xl shadow-sm sticky top-24">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              <div className="bg-card p-6 rounded-xl shadow-sm sticky top-24">
+                <h3 className="text-lg font-semibold text-foreground mb-4">
                   Categories
                 </h3>
                 <div className="space-y-2 mb-6">
@@ -353,19 +353,19 @@ const TemplatesPage = () => {
                       onClick={() => setSelectedCategory(category.id)}
                       className={`w-full text-left px-3 py-2 rounded-lg transition-colors duration-200 flex items-center justify-between ${
                         selectedCategory === category.id
-                          ? "bg-orange-100 text-orange-800"
-                          : "text-gray-700 hover:bg-gray-100"
+                          ? "bg-primary/10 text-primary"
+                          : "text-foreground hover:bg-accent"
                       }`}
                     >
                       <span>{category.name}</span>
-                      <span className="text-sm text-gray-500">
+                      <span className="text-sm text-muted-foreground">
                         {category.count}
                       </span>
                     </button>
                   ))}
                 </div>
 
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                <h3 className="text-lg font-semibold text-foreground mb-4">
                   Format
                 </h3>
                 <div className="space-y-2">
@@ -375,8 +375,8 @@ const TemplatesPage = () => {
                       onClick={() => setSelectedType(type.id)}
                       className={`w-full text-left px-3 py-2 rounded-lg transition-colors duration-200 ${
                         selectedType === type.id
-                          ? "bg-orange-100 text-orange-800"
-                          : "text-gray-700 hover:bg-gray-100"
+                          ? "bg-primary/10 text-primary"
+                          : "text-foreground hover:bg-accent"
                       }`}
                     >
                       {type.name}
@@ -389,10 +389,10 @@ const TemplatesPage = () => {
             {/* Templates Grid */}
             <div className="lg:w-3/4">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold text-gray-900">
+                <h2 className="text-2xl font-bold text-foreground">
                   Templates ({filteredTemplates.length})
                 </h2>
-                <select className="border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                <select className="border border-input rounded-lg px-3 py-2 text-sm">
                   <option>Most Downloaded</option>
                   <option>Newest First</option>
                   <option>Highest Rated</option>
@@ -404,7 +404,7 @@ const TemplatesPage = () => {
                 {filteredTemplates.map((template) => (
                   <div
                     key={template.id}
-                    className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                    className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                   >
                     <img
                       src={template.image}
@@ -413,27 +413,27 @@ const TemplatesPage = () => {
                     />
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-3">
-                        <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                        <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
                           {template.type
                             .replace("-", " ")
                             .replace(/\b\w/g, (l) => l.toUpperCase())}
                         </span>
                         <div className="flex items-center">
-                          <Star className="h-4 w-4 text-yellow-400 mr-1" />
-                          <span className="text-sm text-gray-600">
+                          <Star className="h-4 w-4 text-warning mr-1" />
+                          <span className="text-sm text-muted-foreground">
                             {template.rating}
                           </span>
                         </div>
                       </div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      <h3 className="text-lg font-semibold text-foreground mb-2">
                         {template.title}
                       </h3>
-                      <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                      <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
                         {template.description}
                       </p>
 
                       <div className="mb-4">
-                        <h4 className="text-sm font-medium text-gray-900 mb-2">
+                        <h4 className="text-sm font-medium text-foreground mb-2">
                           Key Features:
                         </h4>
                         <ul className="space-y-1">
@@ -442,16 +442,16 @@ const TemplatesPage = () => {
                             .map((feature, index) => (
                               <li
                                 key={index}
-                                className="text-xs text-gray-600 flex items-center"
+                                className="text-xs text-muted-foreground flex items-center"
                               >
-                                <div className="w-1 h-1 bg-orange-500 rounded-full mr-2"></div>
+                                <div className="w-1 h-1 bg-primary rounded-full mr-2"></div>
                                 {feature}
                               </li>
                             ))}
                         </ul>
                       </div>
 
-                      <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                      <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
                         <div className="flex items-center">
                           <Download className="h-4 w-4 mr-1" />
                           {template.downloads.toLocaleString()}
@@ -460,11 +460,11 @@ const TemplatesPage = () => {
                       </div>
 
                       <div className="flex space-x-2">
-                        <button className="flex-1 bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 transition-colors duration-200 flex items-center justify-center space-x-2">
+                        <button className="flex-1 bg-primary text-primary-foreground py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center space-x-2">
                           <Download className="h-4 w-4" />
                           <span>Download</span>
                         </button>
-                        <button className="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-200">
+                        <button className="px-3 py-2 border border-input rounded-lg hover:bg-accent transition-colors duration-200">
                           <Eye className="h-4 w-4" />
                         </button>
                       </div>
@@ -478,24 +478,24 @@ const TemplatesPage = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-br from-orange-500 to-orange-600">
+      <section className="py-16 bg-gradient-to-br from-cta via-primary to-cta">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
             Need a Custom Template?
           </h2>
-          <p className="text-xl text-white opacity-90 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-primary-foreground opacity-90 mb-8 max-w-2xl mx-auto">
             Can't find what you're looking for? Our community of expert PMs can
             create custom templates tailored to your specific needs and market
             requirements.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/support">
-              <button className="bg-white text-orange-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold">
+              <button className="bg-cta-foreground text-primary px-8 py-3 rounded-lg hover:bg-accent transition-colors duration-200 font-semibold">
                 Request Custom Template
               </button>
             </Link>
             <Link to="/contribute">
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-orange-600 transition-all duration-200 font-semibold">
+              <button className="border-2 border-cta-foreground text-primary-foreground px-8 py-3 rounded-lg hover:bg-cta-foreground hover:text-primary transition-all duration-200 font-semibold">
                 Contribute Template
               </button>
             </Link>

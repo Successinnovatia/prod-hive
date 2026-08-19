@@ -63,19 +63,19 @@ const Contact = () => {
 
   if (isSubmitted) {
     return (
-      <section id="contact\" className="py-20 bg-white">
+      <section id="contact\" className="py-20 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
-            <div className="bg-green-50 p-8 rounded-2xl">
-              <CheckCircle className="h-16 w-16 text-green-600 mx-auto mb-4" />
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Thank You!</h2>
-              <p className="text-gray-600 mb-6">
+            <div className="bg-success/10 p-8 rounded-2xl">
+              <CheckCircle className="h-16 w-16 text-success mx-auto mb-4" />
+              <h2 className="text-2xl font-bold text-foreground mb-4">Thank You!</h2>
+              <p className="text-muted-foreground mb-6">
                 We've received your message and will get back to you within 24 hours. 
                 In the meantime, join our community to start connecting with other aspiring PMs.
               </p>
               <button 
                 onClick={() => setIsSubmitted(false)}
-                className="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors duration-200"
+                className="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200"
               >
                 Send Another Message
               </button>
@@ -87,13 +87,13 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Get in Touch
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Ready to start your PM journey? Have questions about our program? 
             We're here to help you take the next step in your career.
           </p>
@@ -101,12 +101,12 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-gray-50 p-8 rounded-2xl">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
+          <div className="bg-muted p-8 rounded-2xl">
+            <h3 className="text-2xl font-bold text-foreground mb-6">Send us a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                     Full Name *
                   </label>
                   <input
@@ -116,12 +116,12 @@ const Contact = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-colors duration-200"
                     placeholder="Your full name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
                     Email Address *
                   </label>
                   <input
@@ -131,7 +131,7 @@ const Contact = () => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-colors duration-200"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -139,7 +139,7 @@ const Contact = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
                     Phone Number
                   </label>
                   <input
@@ -148,12 +148,12 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-colors duration-200"
                     placeholder="+234 800 123 4567"
                   />
                 </div>
                 <div>
-                  <label htmlFor="currentRole" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="currentRole" className="block text-sm font-medium text-foreground mb-2">
                     Current Role
                   </label>
                   <input
@@ -162,14 +162,14 @@ const Contact = () => {
                     name="currentRole"
                     value={formData.currentRole}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-colors duration-200"
                     placeholder="e.g., Software Engineer"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="interest" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="interest" className="block text-sm font-medium text-foreground mb-2">
                   How can we help you? *
                 </label>
                 <select
@@ -178,7 +178,7 @@ const Contact = () => {
                   required
                   value={formData.interest}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-colors duration-200"
                 >
                   <option value="">Select an option</option>
                   <option value="program">Join the Transition Program</option>
@@ -190,7 +190,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
                   Message *
                 </label>
                 <textarea
@@ -200,14 +200,14 @@ const Contact = () => {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-colors duration-200"
                   placeholder="Tell us about your background and goals..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-orange-600 text-white px-6 py-4 rounded-lg hover:bg-orange-700 transition-all duration-200 font-semibold flex items-center justify-center space-x-2"
+                className="w-full bg-primary text-primary-foreground px-6 py-4 rounded-lg hover:bg-primary/90 transition-all duration-200 font-semibold flex items-center justify-center space-x-2"
               >
                 <Send className="h-5 w-5" />
                 <span>Send Message</span>
@@ -218,17 +218,17 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-6">Contact Information</h3>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="flex items-start space-x-4">
-                    <div className="bg-orange-100 p-3 rounded-lg">
-                      <div className="text-orange-600">{info.icon}</div>
+                    <div className="bg-primary/10 p-3 rounded-lg">
+                      <div className="text-primary">{info.icon}</div>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">{info.title}</h4>
-                      <p className="text-gray-900">{info.details}</p>
-                      <p className="text-sm text-gray-600">{info.subtext}</p>
+                      <h4 className="font-semibold text-foreground mb-1">{info.title}</h4>
+                      <p className="text-foreground">{info.details}</p>
+                      <p className="text-sm text-muted-foreground">{info.subtext}</p>
                     </div>
                   </div>
                 ))}
@@ -236,14 +236,14 @@ const Contact = () => {
             </div>
 
             {/* Quick Actions */}
-            {/* <div className="bg-blue-50 p-6 rounded-xl">
-              <h4 className="font-bold text-gray-900 mb-4">Quick Actions</h4>
+            {/* <div className="bg-accent p-6 rounded-xl">
+              <h4 className="font-bold text-foreground mb-4">Quick Actions</h4>
               <div className="space-y-3">
-                <button className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center space-x-2">
+                <button className="w-full bg-primary text-primary-foreground px-4 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center space-x-2">
                   <Calendar className="h-4 w-4" />
                   <span>Schedule a Call</span>
                 </button>
-                <button className="w-full bg-white text-blue-600 border-2 border-blue-600 px-4 py-3 rounded-lg hover:bg-blue-50 transition-colors duration-200 flex items-center justify-center space-x-2">
+                <button className="w-full bg-cta-foreground text-primary border-2 border-primary px-4 py-3 rounded-lg hover:bg-accent transition-colors duration-200 flex items-center justify-center space-x-2">
                   <MessageCircle className="h-4 w-4" />
                   <span>Join WhatsApp Group</span>
                 </button>
@@ -252,12 +252,12 @@ const Contact = () => {
 
             {/* FAQs */}
             <div>
-              <h4 className="font-bold text-gray-900 mb-4">Frequently Asked Questions</h4>
+              <h4 className="font-bold text-foreground mb-4">Frequently Asked Questions</h4>
               <div className="space-y-4">
                 {faqs.map((faq, index) => (
-                  <div key={index} className="border-l-4 border-orange-500 pl-4">
-                    <h5 className="font-medium text-gray-900 mb-1">{faq.question}</h5>
-                    <p className="text-sm text-gray-600">{faq.answer}</p>
+                  <div key={index} className="border-l-4 border-primary pl-4">
+                    <h5 className="font-medium text-foreground mb-1">{faq.question}</h5>
+                    <p className="text-sm text-muted-foreground">{faq.answer}</p>
                   </div>
                 ))}
               </div>

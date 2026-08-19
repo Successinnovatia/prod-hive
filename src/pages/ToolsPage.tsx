@@ -43,7 +43,7 @@ const ToolsPage = () => {
       description:
         "Calculate TAM, SAM, and SOM for your product across 54 African countries with real economic data.",
       icon: <Calculator className="h-8 w-8" />,
-      color: "bg-blue-500",
+      color: "bg-primary",
       category: "Analysis",
       features: [
         "Real-time economic data for 54 countries",
@@ -61,7 +61,7 @@ const ToolsPage = () => {
       description:
         "Prioritize features using African market-specific criteria including infrastructure constraints.",
       icon: <Target className="h-8 w-8" />,
-      color: "bg-green-500",
+      color: "bg-primary",
       category: "Planning",
       features: [
         "Impact vs Effort matrix with African context",
@@ -79,7 +79,7 @@ const ToolsPage = () => {
       description:
         "Build custom dashboards with KPIs relevant to African markets and emerging economies.",
       icon: <BarChart3 className="h-8 w-8" />,
-      color: "bg-purple-500",
+      color: "bg-primary",
       category: "Analytics",
       features: [
         "Pre-built African market KPI templates",
@@ -97,7 +97,7 @@ const ToolsPage = () => {
       description:
         "Map stakeholders across different African business environments and cultural contexts.",
       icon: <Users className="h-8 w-8" />,
-      color: "bg-orange-500",
+      color: "bg-primary",
       category: "Management",
       features: [
         "Cultural influence mapping",
@@ -115,7 +115,7 @@ const ToolsPage = () => {
       description:
         "Plan product localization across African languages, currencies, and cultural preferences.",
       icon: <Globe className="h-8 w-8" />,
-      color: "bg-indigo-500",
+      color: "bg-primary",
       category: "Localization",
       features: [
         "2000+ African languages database",
@@ -169,7 +169,7 @@ const ToolsPage = () => {
       description:
         "Check regulatory requirements across African countries for your product category.",
       icon: <Shield className="h-8 w-8" />,
-      color: "bg-red-500",
+      color: "bg-destructive/100",
       category: "Compliance",
       features: [
         "Country-specific regulation database",
@@ -268,24 +268,24 @@ const ToolsPage = () => {
   const marketSize = calculateMarketSize();
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 md:pt-40 pb-12 bg-gradient-to-br from-blue-50 to-purple-50">
+      <section className="pt-32 md:pt-40 pb-12 bg-gradient-to-br from-background via-accent to-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Interactive PM Tools
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Powerful, data-driven tools designed specifically for African
               product managers. Make informed decisions with real market data
               and cultural insights.
             </p>
-            <div className="flex items-center justify-center space-x-8 text-sm text-gray-600">
+            <div className="flex items-center justify-center space-x-8 text-sm text-muted-foreground">
               <div className="flex items-center">
-                <Users className="h-5 w-5 mr-2 text-blue-600" />
+                <Users className="h-5 w-5 mr-2 text-primary" />
                 <span>15k+ Active Users</span>
               </div>
               <div className="flex items-center">
@@ -293,7 +293,7 @@ const ToolsPage = () => {
                 <span>4.8 Average Rating</span>
               </div>
               <div className="flex items-center">
-                <Globe className="h-5 w-5 mr-2 text-green-600" />
+                <Globe className="h-5 w-5 mr-2 text-success" />
                 <span>54 Countries Covered</span>
               </div>
             </div>
@@ -302,20 +302,20 @@ const ToolsPage = () => {
       </section>
 
       {/* Featured Tool - Market Calculator */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8">
+          <div className="bg-gradient-to-br from-accent to-secondary rounded-2xl p-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div>
                 <div className="flex items-center mb-4">
-                  <div className="bg-blue-500 p-3 rounded-lg mr-4">
-                    <Calculator className="h-8 w-8 text-white" />
+                  <div className="bg-primary p-3 rounded-lg mr-4">
+                    <Calculator className="h-8 w-8 text-primary-foreground" />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-900">
+                    <h2 className="text-2xl font-bold text-foreground">
                       African Market Size Calculator
                     </h2>
-                    <p className="text-gray-600">
+                    <p className="text-muted-foreground">
                       Calculate your Total Addressable Market
                     </p>
                   </div>
@@ -323,7 +323,7 @@ const ToolsPage = () => {
 
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-foreground mb-2">
                       Target Country
                     </label>
                     <select
@@ -334,7 +334,7 @@ const ToolsPage = () => {
                           country: e.target.value,
                         })
                       }
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     >
                       {countries.map((country) => (
                         <option key={country.id} value={country.id}>
@@ -345,7 +345,7 @@ const ToolsPage = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-foreground mb-2">
                       Target Demographic (% of internet users)
                     </label>
                     <input
@@ -361,7 +361,7 @@ const ToolsPage = () => {
                       }
                       className="w-full"
                     />
-                    <div className="flex justify-between text-sm text-gray-600">
+                    <div className="flex justify-between text-sm text-muted-foreground">
                       <span>1%</span>
                       <span className="font-medium">
                         {calculatorInputs.targetDemographic}%
@@ -371,7 +371,7 @@ const ToolsPage = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-foreground mb-2">
                       Expected Conversion Rate (%)
                     </label>
                     <input
@@ -388,7 +388,7 @@ const ToolsPage = () => {
                       }
                       className="w-full"
                     />
-                    <div className="flex justify-between text-sm text-gray-600">
+                    <div className="flex justify-between text-sm text-muted-foreground">
                       <span>0.1%</span>
                       <span className="font-medium">
                         {calculatorInputs.conversionRate}%
@@ -399,49 +399,49 @@ const ToolsPage = () => {
                 </div>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-sm">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              <div className="bg-card p-6 rounded-xl shadow-sm">
+                <h3 className="text-lg font-semibold text-foreground mb-4">
                   Market Size Results
                 </h3>
                 <div className="space-y-4">
-                  <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
+                  <div className="flex justify-between items-center p-3 bg-accent rounded-lg">
                     <div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-sm text-muted-foreground">
                         Total Addressable Market (TAM)
                       </div>
-                      <div className="text-xs text-gray-500">
+                      <div className="text-xs text-muted-foreground">
                         All internet users
                       </div>
                     </div>
-                    <div className="text-xl font-bold text-blue-600">
+                    <div className="text-xl font-bold text-primary">
                       {marketSize.tam.toLocaleString()}
                     </div>
                   </div>
 
-                  <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg">
+                  <div className="flex justify-between items-center p-3 bg-success/10 rounded-lg">
                     <div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-sm text-muted-foreground">
                         Serviceable Addressable Market (SAM)
                       </div>
-                      <div className="text-xs text-gray-500">
+                      <div className="text-xs text-muted-foreground">
                         Target demographic
                       </div>
                     </div>
-                    <div className="text-xl font-bold text-green-600">
+                    <div className="text-xl font-bold text-success">
                       {marketSize.sam.toLocaleString()}
                     </div>
                   </div>
 
-                  <div className="flex justify-between items-center p-3 bg-orange-50 rounded-lg">
+                  <div className="flex justify-between items-center p-3 bg-accent rounded-lg">
                     <div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-sm text-muted-foreground">
                         Serviceable Obtainable Market (SOM)
                       </div>
-                      <div className="text-xs text-gray-500">
+                      <div className="text-xs text-muted-foreground">
                         Realistic customers
                       </div>
                     </div>
-                    <div className="text-xl font-bold text-orange-600">
+                    <div className="text-xl font-bold text-primary">
                       {marketSize.som.toLocaleString()}
                     </div>
                   </div>
@@ -449,7 +449,7 @@ const ToolsPage = () => {
 
                 <button
                   onClick={() => launchTool("market-calculator")}
-                  className="w-full mt-4 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center space-x-2"
+                  className="w-full mt-4 bg-primary text-primary-foreground py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center space-x-2"
                 >
                   <Play className="h-4 w-4" />
                   <span>Launch Full Calculator</span>
@@ -461,11 +461,11 @@ const ToolsPage = () => {
       </section>
 
       {/* All Tools Grid */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">All Tools</h2>
-            <p className="text-xl text-gray-600">
+            <h2 className="text-3xl font-bold text-foreground mb-4">All Tools</h2>
+            <p className="text-xl text-muted-foreground">
               Comprehensive suite of tools for every aspect of product
               management in Africa
             </p>
@@ -475,48 +475,48 @@ const ToolsPage = () => {
             {tools.map((tool) => (
               <div
                 key={tool.id}
-                className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                className="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div
-                    className={`${tool.color} w-12 h-12 rounded-lg flex items-center justify-center text-white`}
+                    className={`${tool.color} w-12 h-12 rounded-lg flex items-center justify-center text-primary-foreground`}
                   >
                     {tool.icon}
                   </div>
-                  <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-medium">
+                  <span className="bg-muted text-foreground px-2 py-1 rounded text-xs font-medium">
                     {tool.category}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <h3 className="text-lg font-semibold text-foreground mb-2">
                   {tool.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-4">{tool.description}</p>
+                <p className="text-muted-foreground text-sm mb-4">{tool.description}</p>
 
                 <div className="mb-4">
-                  <h4 className="text-sm font-medium text-gray-900 mb-2">
+                  <h4 className="text-sm font-medium text-foreground mb-2">
                     Key Features:
                   </h4>
                   <ul className="space-y-1">
                     {tool.features.slice(0, 3).map((feature, index) => (
                       <li
                         key={index}
-                        className="text-xs text-gray-600 flex items-center"
+                        className="text-xs text-muted-foreground flex items-center"
                       >
-                        <div className="w-1 h-1 bg-orange-500 rounded-full mr-2"></div>
+                        <div className="w-1 h-1 bg-primary rounded-full mr-2"></div>
                         {feature}
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="flex items-center justify-between text-xs text-gray-500 mb-4">
+                <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
                   <div className="flex items-center">
                     <Users className="h-3 w-3 mr-1" />
                     {tool.metrics.users} users
                   </div>
                   <div className="flex items-center">
-                    <Star className="h-3 w-3 mr-1 text-yellow-400" />
+                    <Star className="h-3 w-3 mr-1 text-warning" />
                     {tool.metrics.rating}
                   </div>
                   <div className="flex items-center">
@@ -527,7 +527,7 @@ const ToolsPage = () => {
 
                 <button
                   onClick={() => launchTool(tool.id)}
-                  className="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200 flex items-center justify-center space-x-2"
+                  className="w-full bg-gray-900 text-primary-foreground py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200 flex items-center justify-center space-x-2"
                 >
                   <Play className="h-4 w-4" />
                   <span>Launch Tool</span>
@@ -539,9 +539,9 @@ const ToolsPage = () => {
       </section>
 
       {/* Tool Categories */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+          <h2 className="text-2xl font-bold text-foreground mb-8 text-center">
             Browse by Category
           </h2>
 
@@ -551,13 +551,13 @@ const ToolsPage = () => {
                 name: "Analysis",
                 icon: <BarChart3 className="h-6 w-6" />,
                 count: 8,
-                color: "bg-blue-100 text-blue-600",
+                color: "bg-primary/10 text-primary",
               },
               {
                 name: "Planning",
                 icon: <Target className="h-6 w-6" />,
                 count: 6,
-                color: "bg-green-100 text-green-600",
+                color: "bg-success/15 text-success",
               },
               {
                 name: "Analytics",
@@ -569,7 +569,7 @@ const ToolsPage = () => {
                 name: "Management",
                 icon: <Users className="h-6 w-6" />,
                 count: 4,
-                color: "bg-orange-100 text-orange-600",
+                color: "bg-primary/10 text-primary",
               },
               {
                 name: "Localization",
@@ -581,22 +581,22 @@ const ToolsPage = () => {
                 name: "Compliance",
                 icon: <Shield className="h-6 w-6" />,
                 count: 2,
-                color: "bg-red-100 text-red-600",
+                color: "bg-red-100 text-destructive",
               },
             ].map((category, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-shadow duration-200 cursor-pointer"
+                className="bg-card border border-border rounded-lg p-4 text-center hover:shadow-md transition-shadow duration-200 cursor-pointer"
               >
                 <div
                   className={`w-12 h-12 ${category.color} rounded-lg flex items-center justify-center mx-auto mb-2`}
                 >
                   {category.icon}
                 </div>
-                <h3 className="font-medium text-gray-900 text-sm">
+                <h3 className="font-medium text-foreground text-sm">
                   {category.name}
                 </h3>
-                <p className="text-xs text-gray-500">{category.count} tools</p>
+                <p className="text-xs text-muted-foreground">{category.count} tools</p>
               </div>
             ))}
           </div>
@@ -604,25 +604,25 @@ const ToolsPage = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-br from-orange-500 to-orange-600">
+      <section className="py-16 bg-gradient-to-br from-cta via-primary to-cta">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
             Build Better Products for Africa
           </h2>
-          <p className="text-xl text-white opacity-90 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-primary-foreground opacity-90 mb-8 max-w-2xl mx-auto">
             Join thousands of product managers using our tools to make
             data-driven decisions and build successful products across African
             markets.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/register">
-              <button className="bg-white text-orange-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold flex items-center space-x-2">
+              <button className="bg-cta-foreground text-primary px-8 py-3 rounded-lg hover:bg-accent transition-colors duration-200 font-semibold flex items-center space-x-2">
                 <Zap className="h-5 w-5" />
                 <span>Get Pro Access</span>
               </button>
             </Link>
             <Link to="/support">
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-orange-600 transition-all duration-200 font-semibold">
+              <button className="border-2 border-cta-foreground text-primary-foreground px-8 py-3 rounded-lg hover:bg-cta-foreground hover:text-primary transition-all duration-200 font-semibold">
                 Request New Tool
               </button>
             </Link>

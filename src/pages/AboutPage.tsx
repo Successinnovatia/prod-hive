@@ -81,7 +81,7 @@ const AboutPage = () => {
   const team = [
     {
       name: "Oghenetega Apollos",
-      role: "Founder & CEO",
+      role: "CEO",
       location: "Lagos, Nigeria",
       bio: "Former Senior PM at Flutterwave with 8+ years building fintech products across West Africa. Passionate about democratizing product management education.",
       image: "/images/about-img-1.jpg",
@@ -173,7 +173,7 @@ const AboutPage = () => {
   const milestones = [
     {
       year: "2022",
-      title: "ProdHive Founded",
+      title: "TechPod Founded",
       description:
         "Started as a small WhatsApp group of 20 product managers sharing experiences and job opportunities.",
       icon: <Target className="h-6 w-6" />,
@@ -274,35 +274,36 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 md:pt-40 pb-16 bg-gradient-to-br from-blue-50 to-orange-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden pt-32 md:pt-40 pb-16 bg-background">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_hsl(var(--primary)/0.16),_transparent_55%)]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-6">
               Empowering Africa's
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-600">
+              <span className="text-tech-gradient">
                 {" "}
                 Product Leaders
               </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               We're building the largest community of product managers across
               Africa, providing the education, resources, and network needed to
               succeed in the global tech ecosystem.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/register">
-                <button className="bg-orange-600 text-white px-8 py-4 rounded-lg hover:bg-orange-700 transition-all duration-200 hover:scale-105 flex items-center justify-center space-x-2">
+                <button className="bg-primary text-primary-foreground px-8 py-4 rounded-lg hover:bg-primary/90 shadow-glow transition-all duration-180 flex items-center justify-center space-x-2">
                   <span>Join Our Mission</span>
                   <ArrowRight className="h-5 w-5" />
                 </button>
               </Link>
               <a
                 href="#team"
-                className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg hover:border-orange-600 hover:text-orange-600 transition-all duration-200"
+                className="border border-border bg-card/70 text-foreground px-8 py-4 rounded-lg hover:border-primary/50 hover:text-primary transition-all duration-180"
               >
                 Meet Our Team
               </a>
@@ -312,18 +313,18 @@ const AboutPage = () => {
       </section>
 
       {/* Stats */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <div className="text-orange-600">{stat.icon}</div>
+                <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="text-primary">{stat.icon}</div>
                 </div>
-                <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+                <div className="text-3xl md:text-4xl font-bold text-foreground mb-2">
                   {stat.value}
                 </div>
-                <div className="text-gray-600">{stat.label}</div>
+                <div className="text-muted-foreground">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -331,14 +332,14 @@ const AboutPage = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Our Mission
               </h2>
-              <p className="text-xl text-gray-700 mb-6">
+              <p className="text-xl text-foreground mb-6">
                 To democratize access to product management education and
                 opportunities across Africa, empowering the next generation of
                 African product leaders to build solutions that transform their
@@ -348,10 +349,10 @@ const AboutPage = () => {
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-gray-900">
+                    <h3 className="font-semibold text-foreground">
                       Education First
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-muted-foreground">
                       Providing world-class product management education
                       tailored for African markets
                     </p>
@@ -360,10 +361,10 @@ const AboutPage = () => {
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-gray-900">
+                    <h3 className="font-semibold text-foreground">
                       Community Driven
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-muted-foreground">
                       Building a supportive network where members learn from and
                       support each other
                     </p>
@@ -372,10 +373,10 @@ const AboutPage = () => {
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-gray-900">
+                    <h3 className="font-semibold text-foreground">
                       Impact Focused
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-muted-foreground">
                       Measuring success by the career growth and impact of our
                       community members
                     </p>
@@ -396,13 +397,13 @@ const AboutPage = () => {
       </section>
 
       {/* Our Values */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Our Values
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               The principles that guide everything we do and shape our community
               culture
             </p>
@@ -412,17 +413,17 @@ const AboutPage = () => {
             {values.map((value, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-all duration-300"
+                className="bg-card border border-border rounded-xl p-8 hover:shadow-lg transition-all duration-300"
               >
                 <div
                   className={`${value.color} w-16 h-16 rounded-lg flex items-center justify-center mb-6 text-white`}
                 >
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                <h3 className="text-xl font-semibold text-foreground mb-4">
                   {value.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed">
                   {value.description}
                 </p>
               </div>
@@ -431,62 +432,68 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Our Story */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
+      {/* Founder */}
+      <section className="py-16 bg-muted" id="founder">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Journey
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Meet Our Founder
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From a small WhatsApp group to Africa's largest PM community
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              The vision behind TechPod and the community we are building across
+              Africa
             </p>
           </div>
 
-          <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-orange-200"></div>
-            <div className="space-y-12">
-              {milestones.map((milestone, index) => (
-                <div
-                  key={index}
-                  className={`flex items-center ${
-                    index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-                  }`}
-                >
-                  <div
-                    className={`w-1/2 ${
-                      index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"
-                    }`}
-                  >
-                    <div className="bg-white p-6 rounded-xl shadow-sm">
-                      <div className="text-orange-600 font-bold text-lg mb-2">
-                        {milestone.year}
-                      </div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                        {milestone.title}
-                      </h3>
-                      <p className="text-gray-600">{milestone.description}</p>
-                    </div>
-                  </div>
-                  <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-orange-600 rounded-full text-white">
-                    {milestone.icon}
-                  </div>
-                  <div className="w-1/2"></div>
-                </div>
-              ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-card border border-border rounded-2xl p-8 md:p-12">
+            <div className="flex justify-center">
+              <img
+                src="/images/founder-img.jpeg"
+                alt="Emmanuel Oliseh, Founder of TechPod"
+                className="w-full max-w-md rounded-2xl shadow-lg object-contain bg-muted"
+              />
+            </div>
+            <div>
+              <p className="text-primary font-semibold mb-2">Founder</p>
+              <h3 className="text-3xl font-bold text-foreground mb-4">
+                Emmanuel Oliseh
+              </h3>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  Emmanuel Oliseh founded TechPod with a clear belief: African
+                  tech professionals deserve world-class product management
+                  education that reflects the markets they actually build for.
+                </p>
+                <p>
+                  After watching talented engineers, designers, and operators
+                  struggle to break into product roles without locally relevant
+                  mentorship, he set out to create a community where practical
+                  skills, real market context, and career support come together.
+                </p>
+                <p>
+                  Today, Emmanuel leads TechPod’s mission to help professionals
+                  across the continent transition into product management, grow
+                  as product leaders, and build products that serve African
+                  users while competing on a global stage.
+                </p>
+              </div>
+              <div className="flex items-center text-muted-foreground text-sm mt-6">
+                <MapPin className="h-4 w-4 mr-1" />
+                Lagos, Nigeria
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Team */}
-      <section className="py-16 bg-white" id="team">
+      <section className="py-16 bg-card" id="team">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Meet Our Team
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Experienced product leaders from across Africa, united by a
               passion for education and community building
             </p>
@@ -496,7 +503,7 @@ const AboutPage = () => {
             {team.map((member, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                className="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="text-center mb-6">
                   <img
@@ -504,24 +511,24 @@ const AboutPage = () => {
                     alt={member.name}
                     className="w-24 h-24 rounded-full object-cover mx-auto mb-4"
                   />
-                  <h3 className="text-xl font-semibold text-gray-900 mb-1">
+                  <h3 className="text-xl font-semibold text-foreground mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-orange-600 font-medium mb-1">
+                  <p className="text-primary font-medium mb-1">
                     {member.role}
                   </p>
-                  <div className="flex items-center justify-center text-gray-500 text-sm">
+                  <div className="flex items-center justify-center text-muted-foreground text-sm">
                     <MapPin className="h-4 w-4 mr-1" />
                     {member.location}
                   </div>
                 </div>
 
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
                   {member.bio}
                 </p>
 
                 <div className="mb-4">
-                  <h4 className="font-medium text-gray-900 mb-2">
+                  <h4 className="font-medium text-foreground mb-2">
                     Key Achievements:
                   </h4>
                   <ul className="space-y-1">
@@ -529,7 +536,7 @@ const AboutPage = () => {
                       (achievement, achievementIndex) => (
                         <li
                           key={achievementIndex}
-                          className="text-xs text-gray-600 flex items-center"
+                          className="text-xs text-muted-foreground flex items-center"
                         >
                           <Star className="h-3 w-3 text-yellow-400 mr-2 flex-shrink-0" />
                           {achievement}
@@ -542,17 +549,17 @@ const AboutPage = () => {
                 <div className="flex justify-center space-x-3">
                   <a
                     href={member.linkedin}
-                    className="p-2 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition-colors duration-200"
+                    className="p-2 bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-colors duration-200"
                   >
                     <Linkedin className="h-4 w-4" />
                   </a>
                   <a
                     href={member.twitter}
-                    className="p-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                    className="p-2 bg-muted text-muted-foreground rounded-lg hover:bg-gray-200 transition-colors duration-200"
                   >
                     <Twitter className="h-4 w-4" />
                   </a>
-                  <button className="p-2 bg-orange-100 text-orange-600 rounded-lg hover:bg-orange-200 transition-colors duration-200">
+                  <button className="p-2 bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-colors duration-200">
                     <Mail className="h-4 w-4" />
                   </button>
                 </div>
@@ -563,13 +570,13 @@ const AboutPage = () => {
       </section>
 
       {/* Impact */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Our Impact
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Measuring success through the growth and achievements of our
               community
             </p>
@@ -579,15 +586,15 @@ const AboutPage = () => {
             {impact.map((item, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-xl shadow-sm text-center hover:shadow-md transition-shadow duration-200"
+                className="bg-card p-8 rounded-xl shadow-sm text-center hover:shadow-md transition-shadow duration-200"
               >
-                <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <div className="text-orange-600">{item.icon}</div>
+                <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="text-primary">{item.icon}</div>
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">
+                <div className="text-3xl font-bold text-foreground mb-2">
                   {item.metric}
                 </div>
-                <p className="text-gray-600">{item.description}</p>
+                <p className="text-muted-foreground">{item.description}</p>
               </div>
             ))}
           </div>
@@ -595,13 +602,13 @@ const AboutPage = () => {
       </section>
 
       {/* Partners */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Our Partners
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Working with Africa's leading tech companies to create
               opportunities for our community
             </p>
@@ -611,14 +618,14 @@ const AboutPage = () => {
             {partners.map((partner, index) => (
               <div
                 key={index}
-                className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 grayscale hover:grayscale-0"
+                className="bg-card p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 grayscale hover:grayscale-0"
               >
                 <img
                   src={partner.logo}
                   alt={partner.name}
                   className="w-full h-12 object-contain"
                 />
-                <p className="text-xs text-gray-600 text-center mt-2 font-medium">
+                <p className="text-xs text-muted-foreground text-center mt-2 font-medium">
                   {partner.name}
                 </p>
               </div>
@@ -628,7 +635,7 @@ const AboutPage = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-br from-orange-500 to-orange-600">
+      <section className="py-16 bg-gradient-to-br from-cta via-primary to-accent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Join Our Mission
@@ -640,13 +647,13 @@ const AboutPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/register">
-              <button className="bg-white text-orange-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold flex items-center space-x-2">
+              <button className="bg-card text-primary px-8 py-3 rounded-lg hover:bg-muted transition-colors duration-200 font-semibold flex items-center space-x-2">
                 <Users className="h-5 w-5" />
                 <span>Join Community</span>
               </button>
             </Link>
             <Link to="/support">
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-orange-600 transition-all duration-200 font-semibold flex items-center space-x-2">
+              <button className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-card hover:text-primary transition-all duration-200 font-semibold flex items-center space-x-2">
                 <MessageCircle className="h-5 w-5" />
                 <span>Partner With Us</span>
               </button>

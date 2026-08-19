@@ -455,28 +455,28 @@ const SalaryGuidePage = () => {
       : salaryData.countries.filter((c) => c.id === selectedCountry);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-12 bg-gradient-to-br from-blue-50 to-purple-50">
+      <section className="pt-32 pb-12 bg-gradient-to-br from-background via-accent to-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               African PM Salary Guide 2025
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Comprehensive salary data for product managers across Africa. Make
               informed career decisions with real market insights from 500+ PM
               professionals.
             </p>
-            <div className="flex items-center justify-center space-x-8 text-sm text-gray-600">
+            <div className="flex items-center justify-center space-x-8 text-sm text-muted-foreground">
               <div className="flex items-center">
-                <Users className="h-5 w-5 mr-2 text-blue-600" />
+                <Users className="h-5 w-5 mr-2 text-primary" />
                 <span>500+ Data Points</span>
               </div>
               <div className="flex items-center">
-                <MapPin className="h-5 w-5 mr-2 text-green-600" />
+                <MapPin className="h-5 w-5 mr-2 text-success" />
                 <span>15+ Countries</span>
               </div>
               <div className="flex items-center">
@@ -489,14 +489,14 @@ const SalaryGuidePage = () => {
       </section>
 
       {/* Salary Calculator */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-8">
+          <div className="bg-gradient-to-r from-accent to-secondary rounded-2xl p-8">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-foreground mb-4">
                 Salary Calculator
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-muted-foreground">
                 Get personalized salary estimates based on your location,
                 experience, and industry
               </p>
@@ -504,13 +504,13 @@ const SalaryGuidePage = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-foreground mb-2">
                   Country
                 </label>
                 <select
                   value={selectedCountry}
                   onChange={(e) => setSelectedCountry(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                  className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                 >
                   <option value="all">All Countries</option>
                   {salaryData.countries.map((country) => (
@@ -522,7 +522,7 @@ const SalaryGuidePage = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-foreground mb-2">
                   Experience Level
                 </label>
                 <select
@@ -530,7 +530,7 @@ const SalaryGuidePage = () => {
                   onChange={(e) =>
                     setSelectedLevel(e.target.value as Level | "all")
                   }
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                  className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                 >
                   <option value="all">All Levels</option>
                   {levels.map((level) => (
@@ -542,13 +542,13 @@ const SalaryGuidePage = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-foreground mb-2">
                   Industry
                 </label>
                 <select
                   value={selectedIndustry}
                   onChange={(e) => setSelectedIndustry(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                  className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                 >
                   <option value="all">All Industries</option>
                   {salaryData.industries.map((industry) => (
@@ -560,13 +560,13 @@ const SalaryGuidePage = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-foreground mb-2">
                   Company Size
                 </label>
                 <select
                   value={selectedCompanySize}
                   onChange={(e) => setSelectedCompanySize(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                  className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                 >
                   <option value="all">All Sizes</option>
                   {salaryData.companySizes.map((size) => (
@@ -579,8 +579,8 @@ const SalaryGuidePage = () => {
             </div>
 
             {selectedCountry !== "all" && selectedLevel !== "all" && (
-              <div className="bg-white p-6 rounded-xl shadow-sm">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              <div className="bg-card p-6 rounded-xl shadow-sm">
+                <h3 className="text-lg font-semibold text-foreground mb-4">
                   Your Estimated Salary Range
                 </h3>
                 {(() => {
@@ -596,23 +596,23 @@ const SalaryGuidePage = () => {
 
                   return (
                     <div className="grid grid-cols-3 gap-4">
-                      <div className="text-center p-4 bg-blue-50 rounded-lg">
-                        <div className="text-2xl font-bold text-blue-600">
+                      <div className="text-center p-4 bg-accent rounded-lg">
+                        <div className="text-2xl font-bold text-primary">
                           ${calculatedSalary.min.toLocaleString()}
                         </div>
-                        <div className="text-sm text-gray-600">Minimum</div>
+                        <div className="text-sm text-muted-foreground">Minimum</div>
                       </div>
-                      <div className="text-center p-4 bg-green-50 rounded-lg">
-                        <div className="text-2xl font-bold text-green-600">
+                      <div className="text-center p-4 bg-success/10 rounded-lg">
+                        <div className="text-2xl font-bold text-success">
                           ${calculatedSalary.median.toLocaleString()}
                         </div>
-                        <div className="text-sm text-gray-600">Median</div>
+                        <div className="text-sm text-muted-foreground">Median</div>
                       </div>
-                      <div className="text-center p-4 bg-orange-50 rounded-lg">
-                        <div className="text-2xl font-bold text-orange-600">
+                      <div className="text-center p-4 bg-accent rounded-lg">
+                        <div className="text-2xl font-bold text-primary">
                           ${calculatedSalary.max.toLocaleString()}
                         </div>
-                        <div className="text-sm text-gray-600">Maximum</div>
+                        <div className="text-sm text-muted-foreground">Maximum</div>
                       </div>
                     </div>
                   );
@@ -624,13 +624,13 @@ const SalaryGuidePage = () => {
       </section>
 
       {/* Country Breakdown */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-foreground mb-4">
               Salary by Country
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-muted-foreground">
               Detailed breakdown of PM salaries across major African markets
             </p>
           </div>
@@ -639,16 +639,16 @@ const SalaryGuidePage = () => {
             {filteredCountries.map((country) => (
               <div
                 key={country.id}
-                className="bg-white rounded-xl p-8 shadow-sm"
+                className="bg-card rounded-xl p-8 shadow-sm"
               >
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-4">
                     <span className="text-4xl">{country.flag}</span>
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900">
+                      <h3 className="text-2xl font-bold text-foreground">
                         {country.name}
                       </h3>
-                      <div className="flex items-center gap-4 text-sm text-gray-600">
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
                         <span>Cost of Living: {country.costOfLiving}</span>
                         <span>Market Size: {country.marketSize}</span>
                         <span>Tech Hubs: {country.techHubs.join(", ")}</span>
@@ -656,10 +656,10 @@ const SalaryGuidePage = () => {
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-muted-foreground">
                       Median Senior PM
                     </div>
-                    <div className="text-2xl font-bold text-orange-600">
+                    <div className="text-2xl font-bold text-primary">
                       ${country.salaryRanges.senior.median.toLocaleString()}
                     </div>
                   </div>
@@ -669,15 +669,15 @@ const SalaryGuidePage = () => {
                   {levels.map((level) => {
                     const salaryRange = country.salaryRanges[level.id];
                     return (
-                      <div key={level.id} className="bg-gray-50 p-4 rounded-lg">
-                        <h4 className="font-semibold text-gray-900 mb-2">
+                      <div key={level.id} className="bg-muted p-4 rounded-lg">
+                        <h4 className="font-semibold text-foreground mb-2">
                           {level.name.split(" ")[0]} PM
                         </h4>
-                        <div className="text-lg font-bold text-gray-900">
+                        <div className="text-lg font-bold text-foreground">
                           ${salaryRange.min.toLocaleString()} - $
                           {salaryRange.max.toLocaleString()}
                         </div>
-                        <div className="text-sm text-gray-600">
+                        <div className="text-sm text-muted-foreground">
                           Median: ${salaryRange.median.toLocaleString()}
                         </div>
                       </div>
@@ -687,14 +687,14 @@ const SalaryGuidePage = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">
+                    <h4 className="font-semibold text-foreground mb-3">
                       Top Companies
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {country.topCompanies.map((company, index) => (
                         <span
                           key={index}
-                          className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                          className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm"
                         >
                           {company}
                         </span>
@@ -702,16 +702,16 @@ const SalaryGuidePage = () => {
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">
+                    <h4 className="font-semibold text-foreground mb-3">
                       Market Insights
                     </h4>
                     <ul className="space-y-1">
                       {country.insights.map((insight, index) => (
                         <li
                           key={index}
-                          className="text-sm text-gray-600 flex items-center"
+                          className="text-sm text-muted-foreground flex items-center"
                         >
-                          <div className="w-1 h-1 bg-orange-500 rounded-full mr-2"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full mr-2"></div>
                           {insight}
                         </li>
                       ))}
@@ -725,13 +725,13 @@ const SalaryGuidePage = () => {
       </section>
 
       {/* Industry Analysis */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-foreground mb-4">
               Industry Salary Premiums
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-muted-foreground">
               How different industries affect PM compensation across Africa
             </p>
           </div>
@@ -740,35 +740,35 @@ const SalaryGuidePage = () => {
             {salaryData.industries.map((industry) => (
               <div
                 key={industry.id}
-                className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow duration-200"
+                className="bg-card border border-border rounded-xl p-6 hover:shadow-md transition-shadow duration-200"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h3 className="text-lg font-semibold text-foreground">
                     {industry.name}
                   </h3>
                   <div
                     className={`px-3 py-1 rounded-full text-sm font-medium ${
                       industry.multiplier >= 1.15
-                        ? "bg-green-100 text-green-800"
+                        ? "bg-success/15 text-success"
                         : industry.multiplier >= 1.05
-                        ? "bg-yellow-100 text-yellow-800"
-                        : "bg-gray-100 text-gray-800"
+                        ? "bg-warning/15 text-warning"
+                        : "bg-muted text-foreground"
                     }`}
                   >
                     {industry.multiplier >= 1 ? "1+" : ""}
                     {Math.round((industry.multiplier - 1) * 100)}%
                   </div>
                 </div>
-                <p className="text-gray-600 text-sm mb-4">
+                <p className="text-muted-foreground text-sm mb-4">
                   {industry.description}
                 </p>
                 <div>
-                  <h4 className="font-medium text-gray-600 mb-2">Top Skills</h4>
+                  <h4 className="font-medium text-muted-foreground mb-2">Top Skills</h4>
                   <div className="flex flex-wrap gap-2">
                     {industry.topSkills.map((skill, index) => (
                       <span
                         key={index}
-                        className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs"
+                        className="bg-muted text-foreground px-2 py-1 rounded text-xs"
                       >
                         {skill}
                       </span>
@@ -782,13 +782,13 @@ const SalaryGuidePage = () => {
       </section>
 
       {/* Market Trends */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-foreground mb-4">
               Market Trends
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-muted-foreground">
               Key trends shaping PM compensation in Africa
             </p>
           </div>
@@ -797,18 +797,18 @@ const SalaryGuidePage = () => {
             {marketTrends.map((trend, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-xl shadow-sm text-center"
+                className="bg-card p-6 rounded-xl shadow-sm text-center"
               >
-                <div className="bg-orange-100 w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <div className="text-orange-600">{trend.icon}</div>
+                <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <div className="text-primary">{trend.icon}</div>
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-2">
+                <h3 className="font-semibold text-foreground mb-2">
                   {trend.trend}
                 </h3>
-                <div className="text-2xl font-bold text-green-600 mb-2">
+                <div className="text-2xl font-bold text-success mb-2">
                   {trend.impact}
                 </div>
-                <p className="text-sm text-gray-600">{trend.description}</p>
+                <p className="text-sm text-muted-foreground">{trend.description}</p>
               </div>
             ))}
           </div>
@@ -816,13 +816,13 @@ const SalaryGuidePage = () => {
       </section>
 
       {/* Benefits Analysis */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-foreground mb-4">
               Benefits & Perks
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-muted-foreground">
               Beyond salary: comprehensive benefits offered to African PMs
             </p>
           </div>
@@ -831,9 +831,9 @@ const SalaryGuidePage = () => {
             {benefits.map((category, index) => (
               <div
                 key={index}
-                className="bg-white p-6 border rounded-xl border-gray-200"
+                className="bg-card p-6 border rounded-xl border-border"
               >
-                <h3 className="text-xl mb-6 font-semibold text-gray-900">
+                <h3 className="text-xl mb-6 font-semibold text-foreground">
                   {category.category}
                 </h3>
                 <div className="space-y-4">
@@ -843,20 +843,20 @@ const SalaryGuidePage = () => {
                       className="flex items-center justify-between"
                     >
                       <div>
-                        <div className="font-medium text-gray-900">
+                        <div className="font-medium text-foreground">
                           {item.name}
                         </div>
-                        <div className="text-sm text-gray-600">
+                        <div className="text-sm text-muted-foreground">
                           {item.value}
                         </div>
                       </div>
                       <div className="text-right">
-                        <div className="text-sm font-medium text-gray-900">
+                        <div className="text-sm font-medium text-foreground">
                           {item.prevalence}%
                         </div>
-                        <div className="w-16 bg-gray-200 rounded-full h-2">
+                        <div className="w-16 bg-muted rounded-full h-2">
                           <div
-                            className="bg-orange-500 h-2 rounded-full"
+                            className="bg-primary h-2 rounded-full"
                             style={{ width: item.prevalence + "%" }}
                           ></div>
                         </div>
@@ -871,13 +871,13 @@ const SalaryGuidePage = () => {
       </section>
 
       {/* Negotiation Tips */}
-      <section className="py-12 bg-gradient-to-br from-blue-50 to-purple-50">
+      <section className="py-12 bg-gradient-to-br from-background via-accent to-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-foreground mb-4">
               Salary Negotiation Tips
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-muted-foreground">
               Expert advice for negotiating PM salaries in African markets
             </p>
           </div>
@@ -921,14 +921,14 @@ const SalaryGuidePage = () => {
                 icon: <Award className="h-6 w-6" />,
               },
             ].map((tip, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-sm">
-                <div className="bg-orange-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                  <div className="text-orange-600">{tip.icon}</div>
+              <div key={index} className="bg-card p-6 rounded-xl shadow-sm">
+                <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                  <div className="text-primary">{tip.icon}</div>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                <h3 className="text-lg font-semibold text-foreground mb-3">
                   {tip.title}
                 </h3>
-                <p className="text-sm text-gray-600">{tip.description}</p>
+                <p className="text-sm text-muted-foreground">{tip.description}</p>
               </div>
             ))}
           </div>
@@ -936,12 +936,12 @@ const SalaryGuidePage = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-br from-orange-500 to-orange-600">
+      <section className="py-16 bg-gradient-to-br from-cta via-primary to-cta">
         <div className="max-w-7xl mx-auto px-4 sm:px-4 sm:py-6 lg:px-8 lg:text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
             Ready to Advance Your PM Career?
           </h2>
-          <p className="text-xl text-white opacity-90 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-primary-foreground opacity-90 mb-8 max-w-2xl mx-auto">
             Join our community to access exclusive salary insights, negotiate
             better offers, and connect with top companies across Africa.
           </p>
@@ -949,7 +949,7 @@ const SalaryGuidePage = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={handleDownloadGuide}
-              className="bg-white text-orange-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-300 font-semibold flex items-center space-x-2"
+              className="bg-cta-foreground text-primary px-8 py-3 rounded-lg hover:bg-accent transition-colors duration-300 font-semibold flex items-center space-x-2"
             >
               <div>
                 <Download className="h-5 w-5" />
@@ -957,7 +957,7 @@ const SalaryGuidePage = () => {
               <span>Download Full Report</span>
             </button>
             <Link to="/register">
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-orange-600 transition-colors duration-300 font-semibold">
+              <button className="border-2 border-cta-foreground text-primary-foreground px-8 py-3 rounded-lg hover:bg-cta-foreground hover:text-primary transition-colors duration-300 font-semibold">
                 Join PM Community
               </button>
             </Link>

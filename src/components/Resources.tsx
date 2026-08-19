@@ -72,13 +72,13 @@ const Resources = () => {
   ];
 
   return (
-    <section id="resources" className="py-20 bg-white">
+    <section id="resources" className="py-20 bg-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             PM Resources & Tools
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Access our comprehensive library of templates, interactive tools, and guides specifically 
             designed for African product managers and those transitioning into PM roles.
           </p>
@@ -87,7 +87,7 @@ const Resources = () => {
         {/* Featured Resources */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           {featuredResources.map((resource, index) => (
-            <div key={index} className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+            <div key={index} className="bg-gradient-to-r from-background via-primary/5 to-accent/10 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
               <div className="flex flex-col md:flex-row items-center gap-6">
                 <img 
                   src={resource.image} 
@@ -95,21 +95,21 @@ const Resources = () => {
                   className="w-full md:w-32 h-32 object-cover rounded-lg"
                 />
                 <div className="flex-1 text-center md:text-left">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{resource.title}</h3>
-                  <p className="text-gray-600 mb-4">{resource.description}</p>
+                  <h3 className="text-xl font-bold text-foreground mb-2">{resource.title}</h3>
+                  <p className="text-muted-foreground mb-4">{resource.description}</p>
                   <div className="flex items-center justify-center md:justify-start gap-4 mb-4">
                     <div className="flex items-center">
                       <Star className="h-4 w-4 text-yellow-400 mr-1" />
-                      <span className="text-sm text-gray-700">{resource.rating}</span>
+                      <span className="text-sm text-foreground">{resource.rating}</span>
                     </div>
-                    <div className="text-sm text-gray-600">{resource.downloads} downloads</div>
+                    <div className="text-sm text-muted-foreground">{resource.downloads} downloads</div>
                     <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium">
                       {resource.price}
                     </span>
                   </div>
                   <button 
                     onClick={() => handleDownload(resource.filename)}
-                    className="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition-colors duration-200 flex items-center space-x-2"
+                    className="bg-primary text-primary-foreground px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center space-x-2"
                   >
                     <Download className="h-4 w-4" />
                     <span>Download Now</span>
@@ -123,25 +123,25 @@ const Resources = () => {
         {/* Resource Categories */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           {resourceCategories.map((category, index) => (
-            <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-all duration-200">
+            <div key={index} className="bg-card border border-border rounded-xl p-6 hover:shadow-md transition-all duration-200">
               <div className="flex items-center mb-6">
                 <div className={`${category.color} p-3 rounded-lg mr-4`}>
                   <div className="text-white">{category.icon}</div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">{category.title}</h3>
+                <h3 className="text-xl font-bold text-foreground">{category.title}</h3>
               </div>
               <div className="space-y-4">
                 {category.resources.map((resource, resourceIndex) => (
-                  <div key={resourceIndex} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                  <div key={resourceIndex} className="flex items-center justify-between p-3 bg-muted rounded-lg hover:bg-muted transition-colors duration-200">
                     <div>
-                      <h4 className="font-medium text-gray-900">{resource.name}</h4>
-                      <p className="text-sm text-gray-600">{resource.type}</p>
+                      <h4 className="font-medium text-foreground">{resource.name}</h4>
+                      <p className="text-sm text-muted-foreground">{resource.type}</p>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <span className="text-xs text-gray-500">{resource.downloads}</span>
+                      <span className="text-xs text-muted-foreground">{resource.downloads}</span>
                       <button 
                         onClick={() => handleDownload(resource.filename)}
-                        className="p-1 text-orange-600 hover:text-orange-700"
+                        className="p-1 text-primary hover:text-primary"
                       >
                         <Download className="h-4 w-4" />
                       </button>
@@ -151,7 +151,7 @@ const Resources = () => {
               </div>
               <a 
                 href={category.href}
-                className="w-full mt-4 text-orange-600 hover:text-orange-700 font-medium flex items-center justify-center space-x-1"
+                className="w-full mt-4 text-primary hover:text-primary font-medium flex items-center justify-center space-x-1"
               >
                 <span>View All {category.title}</span>
                 <ExternalLink className="h-4 w-4" />
@@ -161,7 +161,7 @@ const Resources = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-8 text-center text-white">
+        <div className="bg-gradient-to-br from-cta via-primary to-accent rounded-2xl p-8 text-center text-white">
           <h3 className="text-2xl md:text-3xl font-bold mb-4">
             Explore Our Complete Resource Library
           </h3>
@@ -172,21 +172,21 @@ const Resources = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href="/resources"
-              className="bg-white text-orange-600 px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold flex items-center space-x-2"
+              className="bg-card text-primary px-6 py-3 rounded-lg hover:bg-muted transition-colors duration-200 font-semibold flex items-center space-x-2"
             >
               <span>Browse All Resources</span>
               <ArrowRight className="h-5 w-5" />
             </a>
             <a 
               href="/tools"
-              className="bg-white text-orange-600 px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold flex items-center space-x-2"
+              className="bg-card text-primary px-6 py-3 rounded-lg hover:bg-muted transition-colors duration-200 font-semibold flex items-center space-x-2"
             >
               <span>Try Interactive Tools</span>
               <Calculator className="h-5 w-5" />
             </a>
             <a 
               href="/contribute"
-              className="border-2 border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-orange-600 transition-all duration-200 font-semibold"
+              className="border-2 border-white text-white px-6 py-3 rounded-lg hover:bg-card hover:text-primary transition-all duration-200 font-semibold"
             >
               Contribute Content
             </a>

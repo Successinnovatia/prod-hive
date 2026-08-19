@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Menu, X, Target, ChevronDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
+  const location = useLocation();
 
   const navigation = [
     { name: 'About', href: '/about' },
@@ -23,20 +25,28 @@ const Header = () => {
     { name: 'Salary Guide', href: '/salary-guide' }
   ];
 
+  const isActive = (href: string, dropdown?: { href: string }[]) => {
+    if (location.pathname === href) return true;
+    if (dropdown?.some((item) => location.pathname.startsWith(item.href))) return true;
+    return false;
+  };
+
   return (
-    <header className="fixed w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+    <header className="fixed w-full bg-background/80 backdrop-blur-xl border-b border-border z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <a href="/" className="flex items-center space-x-2">
-            <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-2 rounded-lg">
+            <div className="bg-tech-gradient p-2 rounded-lg shadow-glow">
               <Target className="h-6 w-6 text-white" />
             </div>
-            <span className="text-xl font-bold text-gray-900">ProdHive</span>
+            <span className="text-xl font-bold tracking-tight text-foreground">TechPod</span>
           </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {navigation.map((item) => (
+            {navigation.map((item) => {
+              const active = isActive(item.href, item.dropdown);
+              return (
               <div key={item.name} className="relative">
                 {item.dropdown ? (
                   <div 
@@ -44,17 +54,24 @@ const Header = () => {
                     onMouseEnter={() => setIsResourcesOpen(true)}
                     onMouseLeave={() => setIsResourcesOpen(false)}
                   >
-                    <button className="flex items-center text-gray-700 hover:text-orange-600 font-medium transition-colors duration-200">
+                    <button className={`flex items-center font-medium transition-colors duration-180 ${active ? 'text-primary' : 'text-muted-foreground hover:text-foreground'}`}>
                       {item.name}
                       <ChevronDown className="h-4 w-4 ml-1" />
                     </button>
                     {isResourcesOpen && (
-                      <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2">
+                      <div
+                        className="absolute top-full left-0 mt-2 w-48 rounded-lg shadow-lg border border-border py-2 z-50"
+                        style={{ backgroundColor: 'hsl(var(--card))' }}
+                      >
                         {item.dropdown.map((dropdownItem) => (
                           <Link
                             key={dropdownItem.name}
                             to={dropdownItem.href}
-                            className="block px-4 py-2 text-gray-700 hover:text-orange-600 hover:bg-gray-50 transition-colors duration-200"
+                            className={`block px-4 py-2 transition-colors duration-180 ${
+                              location.pathname === dropdownItem.href
+                                ? 'text-primary bg-primary/10'
+                                : 'text-foreground hover:text-primary hover:bg-muted'
+                            }`}
                           >
                             {dropdownItem.name}
                           </Link>
@@ -65,52 +82,55 @@ const Header = () => {
                 ) : (
                   <Link
                     to={item.href}
-                    className="text-gray-700 hover:text-orange-600 font-medium transition-colors duration-200"
+                    className={`font-medium transition-colors duration-180 ${active ? 'text-primary' : 'text-muted-foreground hover:text-foreground'}`}
                   >
                     {item.name}
                   </Link>
                 )}
               </div>
-            ))}
+            )})}
           </nav>
 
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-3">
+            <ThemeToggle />
             <Link
               to="/signin"
-              className="text-gray-700 hover:text-orange-600 font-medium transition-colors duration-200"
+              className="text-muted-foreground hover:text-foreground font-medium transition-colors duration-180"
             >
               Sign In
             </Link>
             <Link
               to="/register"
-              className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors duration-200"
+              className="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 shadow-glow transition-all duration-180"
             >
               Join Program
             </Link>
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? (
-              <X className="h-6 w-6 text-gray-700" />
-            ) : (
-              <Menu className="h-6 w-6 text-gray-700" />
-            )}
-          </button>
+          <div className="flex items-center space-x-1 md:hidden">
+            <ThemeToggle />
+            <button
+              className="p-2"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6 text-foreground" />
+              ) : (
+                <Menu className="h-6 w-6 text-foreground" />
+              )}
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-100">
+          <div className="md:hidden py-4 border-t border-border">
             <div className="space-y-2">
               {navigation.map((item) => (
                 <div key={item.name}>
                   <Link
                     to={item.href}
-                    className="block px-4 py-2 text-gray-700 hover:text-orange-600 hover:bg-gray-50 rounded-lg transition-colors duration-200"
+                    className="block px-4 py-2 text-muted-foreground hover:text-primary hover:bg-muted rounded-lg transition-colors duration-180"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
@@ -121,7 +141,7 @@ const Header = () => {
                         <Link
                           key={dropdownItem.name}
                           to={dropdownItem.href}
-                          className="block px-4 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-gray-50 rounded-lg transition-colors duration-200"
+                          className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted rounded-lg transition-colors duration-180"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           {dropdownItem.name}
@@ -134,14 +154,14 @@ const Header = () => {
               <div className="px-4 pt-4 space-y-2">
                 <Link 
                   to="/signin"
-                  className="block w-full text-left text-gray-700 hover:text-orange-600 font-medium py-2"
+                  className="block w-full text-left text-muted-foreground hover:text-foreground font-medium py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Sign In
                 </Link>
                 <Link
                   to="/register"
-                  className="block w-full bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors duration-200 text-center"
+                  className="block w-full bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 shadow-glow transition-all duration-180 text-center"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Join Program

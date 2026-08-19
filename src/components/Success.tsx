@@ -82,14 +82,14 @@ const Success = () => {
   return (
     <section
       id="success"
-      className="py-20 bg-gradient-to-br from-blue-50 to-purple-50"
+      className="py-20 bg-gradient-to-br from-background via-primary/5 to-accent/10"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Success Stories
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Meet the professionals who successfully transitioned to product
             management and are now leading products across Africa's top
             companies.
@@ -101,13 +101,13 @@ const Success = () => {
           {metrics.map((metric, index) => (
             <div
               key={index}
-              className="text-center bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200"
+              className="text-center bg-card p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200"
             >
               <div className="text-3xl mb-2">{metric.icon}</div>
-              <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
+              <div className="text-2xl md:text-3xl font-bold text-foreground mb-1">
                 {metric.value}
               </div>
-              <div className="text-gray-600 text-sm md:text-base">
+              <div className="text-muted-foreground text-sm md:text-base">
                 {metric.label}
               </div>
             </div>
@@ -119,7 +119,7 @@ const Success = () => {
           {successStories.map((story, index) => (
             <div
               key={index}
-              className={`flex flex-col lg:flex-row items-center gap-8 bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 ${
+              className={`flex flex-col lg:flex-row items-center gap-8 bg-card border border-border p-8 rounded-2xl shadow-sm hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-glow transition-all duration-180 ${
                 index % 2 === 1 ? "lg:flex-row-reverse" : ""
               }`}
             >
@@ -132,27 +132,27 @@ const Success = () => {
               </div>
               <div className="lg:w-2/3 text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start mb-4">
-                  <Quote className="h-8 w-8 text-orange-500 mr-2" />
+                  <Quote className="h-8 w-8 text-primary mr-2" />
                   <div className="flex">
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className="h-4 w-4 text-yellow-400 fill-current"
+                        className="h-4 w-4 text-warning fill-current"
                       />
                     ))}
                   </div>
                 </div>
-                <blockquote className="text-lg text-gray-700 mb-6 italic">
+                <blockquote className="text-lg text-foreground mb-6 italic">
                   "{story.quote}"
                 </blockquote>
                 <div className="space-y-2 mb-4">
-                  <h3 className="text-xl font-bold text-gray-900">
+                  <h3 className="text-xl font-bold text-foreground">
                     {story.name}
                   </h3>
-                  <p className="text-orange-600 font-semibold">
+                  <p className="text-primary font-semibold">
                     {story.role} at {story.company}
                   </p>
-                  <div className="flex items-center justify-center lg:justify-start text-gray-600 space-x-4">
+                  <div className="flex items-center justify-center lg:justify-start text-muted-foreground space-x-4">
                     <div className="flex items-center">
                       <MapPin className="h-4 w-4 mr-1" />
                       {story.location}
@@ -163,11 +163,11 @@ const Success = () => {
                     </div>
                   </div>
                 </div>
-                <div className="bg-green-50 p-4 rounded-lg">
-                  <p className="text-green-800 font-semibold">
+                <div className="bg-success/10 p-4 rounded-lg">
+                  <p className="text-success font-semibold">
                     🎉 {story.achievement}
                   </p>
-                  <p className="text-green-600 text-sm">{story.timeframe}</p>
+                  <p className="text-success text-sm">{story.timeframe}</p>
                 </div>
               </div>
             </div>
@@ -176,21 +176,21 @@ const Success = () => {
 
         {/* Partner Companies */}
         <div className="text-center mb-12">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">
+          <h3 className="text-2xl font-bold text-foreground mb-8">
             Our Alumni Work At
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
             {companies.map((company, index) => (
               <div
                 key={index}
-                className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 grayscale hover:grayscale-0"
+                className="bg-card p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 grayscale hover:grayscale-0"
               >
                 <img
                   src={company.logo}
                   alt={company.name}
                   className="w-16 h-16 object-cover rounded mx-auto"
                 />
-                <p className="text-sm text-gray-600 mt-2 font-medium">
+                <p className="text-sm text-muted-foreground mt-2 font-medium">
                   {company.name}
                 </p>
               </div>
@@ -199,7 +199,7 @@ const Success = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl p-8 text-center text-white">
+        <div className="bg-gradient-to-br from-cta via-primary to-accent rounded-2xl p-8 text-center text-white">
           <h3 className="text-2xl md:text-3xl font-bold mb-4">
             Ready to Write Your Success Story?
           </h3>
@@ -208,7 +208,7 @@ const Success = () => {
             product management.
           </p>
           <Link to="/register">
-            <button className="bg-white text-orange-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-200 font-semibold flex items-center space-x-2 mx-auto">
+            <button className="bg-white text-primary px-8 py-4 rounded-lg hover:bg-white/90 shadow-glow transition-all duration-180 font-semibold flex items-center space-x-2 mx-auto">
               <span>Start Your Journey Today</span>
               <ArrowRight className="h-5 w-5" />
             </button>

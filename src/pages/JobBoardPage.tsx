@@ -520,17 +520,17 @@ const JobBoardPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-12 bg-gradient-to-br from-blue-50 to-purple-50">
+      <section className="pt-32 pb-12 bg-gradient-to-br from-background via-accent to-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               African PM Job Board
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Discover product management opportunities across Africa's
               fastest-growing tech companies. From fintech to e-commerce, find
               your next career move.
@@ -538,22 +538,22 @@ const JobBoardPage = () => {
 
             {/* Search Bar */}
             <div className="max-w-4xl mx-auto">
-              <div className="flex flex-col md:flex-row gap-4 bg-white p-4 rounded-xl shadow-lg">
+              <div className="flex flex-col md:flex-row gap-4 bg-card p-4 rounded-xl shadow-lg">
                 <div className="flex-1 relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
                   <input
                     type="text"
                     placeholder="Search jobs, companies, or skills..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    className="w-full pl-10 pr-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                   />
                 </div>
                 <div className="flex gap-2">
                   <select
                     value={selectedLocation}
                     onChange={(e) => setSelectedLocation(e.target.value)}
-                    className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    className="px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                   >
                     {locations.map((location) => (
                       <option key={location.id} value={location.id}>
@@ -563,7 +563,7 @@ const JobBoardPage = () => {
                   </select>
                   <button
                     onClick={() => setShowFilters(!showFilters)}
-                    className="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors duration-200 flex items-center space-x-2"
+                    className="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center space-x-2"
                   >
                     <Filter className="h-5 w-5" />
                     <span>Filters</span>
@@ -573,13 +573,13 @@ const JobBoardPage = () => {
             </div>
 
             {/* Quick Stats */}
-            <div className="flex items-center justify-center space-x-8 mt-6 text-sm text-gray-600">
+            <div className="flex items-center justify-center space-x-8 mt-6 text-sm text-muted-foreground">
               <div className="flex items-center">
-                <Briefcase className="h-5 w-5 mr-2 text-blue-600" />
+                <Briefcase className="h-5 w-5 mr-2 text-primary" />
                 <span>{jobs.length} Active Jobs</span>
               </div>
               <div className="flex items-center">
-                <Building className="h-5 w-5 mr-2 text-green-600" />
+                <Building className="h-5 w-5 mr-2 text-success" />
                 <span>50+ Companies</span>
               </div>
               <div className="flex items-center">
@@ -593,17 +593,17 @@ const JobBoardPage = () => {
 
       {/* Filters Panel */}
       {showFilters && (
-        <section className="py-6 bg-gray-50 border-b border-gray-200">
+        <section className="py-6 bg-muted border-b border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-foreground mb-2">
                   Experience Level
                 </label>
                 <select
                   value={selectedLevel}
                   onChange={(e) => setSelectedLevel(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                  className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                 >
                   {levels.map((level) => (
                     <option key={level.id} value={level.id}>
@@ -613,13 +613,13 @@ const JobBoardPage = () => {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-foreground mb-2">
                   Job Type
                 </label>
                 <select
                   value={selectedType}
                   onChange={(e) => setSelectedType(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                  className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                 >
                   {jobTypes.map((type) => (
                     <option key={type.id} value={type.id}>
@@ -629,13 +629,13 @@ const JobBoardPage = () => {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-foreground mb-2">
                   Company Size
                 </label>
                 <select
                   value={selectedCompanySize}
                   onChange={(e) => setSelectedCompanySize(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                  className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                 >
                   {companySizes.map((size) => (
                     <option key={size.id} value={size.id}>
@@ -645,13 +645,13 @@ const JobBoardPage = () => {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-foreground mb-2">
                   Salary Range
                 </label>
                 <select
                   value={selectedSalaryRange}
                   onChange={(e) => setSelectedSalaryRange(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                  className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                 >
                   {salaryRanges.map((range) => (
                     <option key={range.id} value={range.id}>
@@ -667,9 +667,9 @@ const JobBoardPage = () => {
 
       {/* Featured Jobs */}
       {featuredJobs.length > 0 && (
-        <section className="py-12 bg-white">
+        <section className="py-12 bg-card">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8 flex items-center">
+            <h2 className="text-2xl font-bold text-foreground mb-8 flex items-center">
               <Star className="h-6 w-6 text-yellow-500 mr-2" />
               Featured Jobs
             </h2>
@@ -677,7 +677,7 @@ const JobBoardPage = () => {
               {featuredJobs.slice(0, 4).map((job) => (
                 <div
                   key={job.id}
-                  className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+                  className="bg-gradient-to-r from-background via-accent to-secondary border border-primary/30 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
@@ -687,10 +687,10 @@ const JobBoardPage = () => {
                         className="w-12 h-12 rounded-lg object-cover"
                       />
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-900">
+                        <h3 className="text-lg font-semibold text-foreground">
                           {job.title}
                         </h3>
-                        <p className="text-gray-600">{job.company}</p>
+                        <p className="text-muted-foreground">{job.company}</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
@@ -703,8 +703,8 @@ const JobBoardPage = () => {
                         onClick={() => toggleSaveJob(job.id)}
                         className={`p-2 rounded-lg transition-colors duration-200 ${
                           savedJobs.includes(job.id)
-                            ? "bg-orange-100 text-orange-600"
-                            : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                            ? "bg-primary/10 text-primary"
+                            : "bg-muted text-muted-foreground hover:bg-accent"
                         }`}
                       >
                         <Bookmark className="h-4 w-4" />
@@ -712,7 +712,7 @@ const JobBoardPage = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
                     <div className="flex items-center">
                       <MapPin className="h-4 w-4 mr-1" />
                       {job.location}
@@ -727,7 +727,7 @@ const JobBoardPage = () => {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-4 line-clamp-2">
+                  <p className="text-foreground mb-4 line-clamp-2">
                     {job.description}
                   </p>
 
@@ -735,7 +735,7 @@ const JobBoardPage = () => {
                     {job.skills.slice(0, 3).map((skill, index) => (
                       <span
                         key={index}
-                        className="bg-white text-gray-700 px-3 py-1 rounded-full text-sm border"
+                        className="bg-card text-foreground px-3 py-1 rounded-full text-sm border"
                       >
                         {skill}
                       </span>
@@ -745,14 +745,14 @@ const JobBoardPage = () => {
                   <div className="flex space-x-2">
                     <button
                       onClick={() => handleApplyClick(job)}
-                      className="flex-1 bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 transition-colors duration-200 flex items-center justify-center space-x-2"
+                      className="flex-1 bg-primary text-primary-foreground py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center space-x-2"
                     >
                       <span>Apply Now</span>
                       <ExternalLink className="h-4 w-4" />
                     </button>
                     <button
                       onClick={() => handleDetailsClick(job)}
-                      className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+                      className="px-4 py-2 border border-input rounded-lg hover:bg-accent transition-colors duration-200"
                     >
                       Details
                     </button>
@@ -765,48 +765,48 @@ const JobBoardPage = () => {
       )}
 
       {/* Main Job Listings */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Sidebar */}
             <div className="lg:w-1/4">
-              <div className="bg-white p-6 rounded-xl shadow-sm sticky top-24">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              <div className="bg-card p-6 rounded-xl shadow-sm sticky top-24">
+                <h3 className="text-lg font-semibold text-foreground mb-4">
                   Job Alerts
                 </h3>
-                <p className="text-gray-600 text-sm mb-4">
+                <p className="text-muted-foreground text-sm mb-4">
                   Get notified when new PM jobs matching your criteria are
                   posted.
                 </p>
                 <button
                   onClick={handleCreateAlert}
-                  className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 mb-6"
+                  className="w-full bg-primary text-primary-foreground py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200 mb-6"
                 >
                   Create Job Alert
                 </button>
 
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                <h3 className="text-lg font-semibold text-foreground mb-4">
                   Quick Stats
                 </h3>
                 <div className="space-y-3">
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Total Jobs:</span>
+                    <span className="text-muted-foreground">Total Jobs:</span>
                     <span className="font-semibold">{jobs.length}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Remote Jobs:</span>
+                    <span className="text-muted-foreground">Remote Jobs:</span>
                     <span className="font-semibold">
                       {jobs.filter((j) => j.remote).length}
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Senior Roles:</span>
+                    <span className="text-muted-foreground">Senior Roles:</span>
                     <span className="font-semibold">
                       {jobs.filter((j) => j.level === "Senior").length}
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Saved Jobs:</span>
+                    <span className="text-muted-foreground">Saved Jobs:</span>
                     <span className="font-semibold">{savedJobs.length}</span>
                   </div>
                 </div>
@@ -816,13 +816,13 @@ const JobBoardPage = () => {
             {/* Job Listings */}
             <div className="lg:w-3/4">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-semibold text-gray-900">
+                <h2 className="text-xl font-semibold text-foreground">
                   {sortedJobs.length} Jobs Found
                 </h2>
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="border border-gray-300 rounded-lg px-3 py-2 text-sm"
+                  className="border border-input rounded-lg px-3 py-2 text-sm"
                 >
                   <option value="newest">Newest First</option>
                   <option value="salary-high">Highest Salary</option>
@@ -835,7 +835,7 @@ const JobBoardPage = () => {
                 {sortedJobs.map((job) => (
                   <div
                     key={job.id}
-                    className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-all duration-200"
+                    className="bg-card border border-border rounded-xl p-6 hover:shadow-md transition-all duration-200"
                   >
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center gap-4">
@@ -845,13 +845,13 @@ const JobBoardPage = () => {
                           className="w-16 h-16 rounded-lg object-cover"
                         />
                         <div>
-                          <h3 className="text-xl font-semibold text-gray-900 mb-1">
+                          <h3 className="text-xl font-semibold text-foreground mb-1">
                             {job.title}
                           </h3>
-                          <p className="text-gray-600 font-medium">
+                          <p className="text-muted-foreground font-medium">
                             {job.company}
                           </p>
-                          <div className="flex items-center gap-4 text-sm text-gray-500 mt-1">
+                          <div className="flex items-center gap-4 text-sm text-muted-foreground mt-1">
                             <div className="flex items-center">
                               <MapPin className="h-4 w-4 mr-1" />
                               {job.location}
@@ -870,7 +870,7 @@ const JobBoardPage = () => {
 
                       <div className="flex items-center gap-2">
                         {job.featured && (
-                          <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs font-medium">
+                          <span className="bg-warning/15 text-warning px-2 py-1 rounded text-xs font-medium">
                             Featured
                           </span>
                         )}
@@ -880,7 +880,7 @@ const JobBoardPage = () => {
                           </span>
                         )}
                         {job.remote && (
-                          <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">
+                          <span className="bg-success/15 text-success px-2 py-1 rounded text-xs font-medium">
                             Remote
                           </span>
                         )}
@@ -888,8 +888,8 @@ const JobBoardPage = () => {
                           onClick={() => toggleSaveJob(job.id)}
                           className={`p-2 rounded-lg transition-colors duration-200 ${
                             savedJobs.includes(job.id)
-                              ? "bg-orange-100 text-orange-600"
-                              : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                              ? "bg-primary/10 text-primary"
+                              : "bg-muted text-muted-foreground hover:bg-accent"
                           }`}
                         >
                           <Bookmark className="h-4 w-4" />
@@ -897,7 +897,7 @@ const JobBoardPage = () => {
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-6 text-sm text-gray-600 mb-4">
+                    <div className="flex items-center gap-6 text-sm text-muted-foreground mb-4">
                       <div className="flex items-center">
                         <DollarSign className="h-4 w-4 mr-1" />
                         {job.salary}
@@ -912,13 +912,13 @@ const JobBoardPage = () => {
                       </div>
                     </div>
 
-                    <p className="text-gray-700 mb-4">{job.description}</p>
+                    <p className="text-foreground mb-4">{job.description}</p>
 
                     <div className="flex flex-wrap gap-2 mb-4">
                       {job.skills.map((skill, index) => (
                         <span
                           key={index}
-                          className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                          className="bg-muted text-foreground px-3 py-1 rounded-full text-sm"
                         >
                           {skill}
                         </span>
@@ -929,19 +929,19 @@ const JobBoardPage = () => {
                       <div className="flex space-x-3">
                         <button
                           onClick={() => handleApplyClick(job)}
-                          className="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition-colors duration-200 flex items-center space-x-2"
+                          className="bg-primary text-primary-foreground px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center space-x-2"
                         >
                           <span>Apply Now</span>
                           <ExternalLink className="h-4 w-4" />
                         </button>
                         <button
                           onClick={() => handleDetailsClick(job)}
-                          className="border border-gray-300 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+                          className="border border-input text-foreground px-6 py-2 rounded-lg hover:bg-accent transition-colors duration-200"
                         >
                           View Details
                         </button>
                       </div>
-                      <button className="text-gray-400 hover:text-gray-600">
+                      <button className="text-muted-foreground hover:text-muted-foreground">
                         <Share2 className="h-4 w-4" />
                       </button>
                     </div>
@@ -951,11 +951,11 @@ const JobBoardPage = () => {
 
               {sortedJobs.length === 0 && (
                 <div className="text-center py-12">
-                  <AlertCircle className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-                  <h3 className="text-lg font-medium text-gray-900 mb-2">
+                  <AlertCircle className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
+                  <h3 className="text-lg font-medium text-foreground mb-2">
                     No jobs found
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-muted-foreground">
                     Try adjusting your search criteria or filters
                   </p>
                 </div>
@@ -966,24 +966,24 @@ const JobBoardPage = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-br from-orange-500 to-orange-600">
+      <section className="py-16 bg-gradient-to-br from-cta via-primary to-cta">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
             Ready to Land Your Dream PM Job?
           </h2>
-          <p className="text-xl text-white opacity-90 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-primary-foreground opacity-90 mb-8 max-w-2xl mx-auto">
             Join our community to get exclusive job opportunities, career
             guidance, and connect with hiring managers across Africa.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/register">
-              <button className="bg-white text-orange-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold flex items-center space-x-2">
+              <button className="bg-cta-foreground text-primary px-8 py-3 rounded-lg hover:bg-accent transition-colors duration-200 font-semibold flex items-center space-x-2">
                 <Award className="h-5 w-5" />
                 <span>Join PM Community</span>
               </button>
             </Link>
             <Link to="/signin">
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-orange-600 transition-all duration-200 font-semibold">
+              <button className="border-2 border-cta-foreground text-primary-foreground px-8 py-3 rounded-lg hover:bg-cta-foreground hover:text-primary transition-all duration-200 font-semibold">
                 Post a Job
               </button>
             </Link>

@@ -129,10 +129,10 @@ This template has been used by product teams at major African tech companies inc
 
   const getTypeColor = (type: string) => {
     switch (type) {
-      case 'free': return 'bg-green-100 text-green-800';
-      case 'premium': return 'bg-orange-100 text-orange-800';
+      case 'free': return 'bg-success/15 text-success';
+      case 'premium': return 'bg-primary/10 text-primary';
       case 'member-only': return 'bg-purple-100 text-purple-800';
-      default: return 'bg-gray-100 text-gray-800';
+      default: return 'bg-muted text-foreground';
     }
   };
 
@@ -146,22 +146,22 @@ This template has been used by product teams at major African tech companies inc
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       <Header />
       
       <div className="pt-20">
         {/* Breadcrumb */}
-        <div className="bg-gray-50 py-4">
+        <div className="bg-muted py-4">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center space-x-2 text-sm text-gray-600">
-              <button className="flex items-center hover:text-orange-600">
+            <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <button className="flex items-center hover:text-primary">
                 <ArrowLeft className="h-4 w-4 mr-1" />
                 Back to Resources
               </button>
               <span>/</span>
               <span>Templates</span>
               <span>/</span>
-              <span className="text-gray-900">{resource.title}</span>
+              <span className="text-foreground">{resource.title}</span>
             </div>
           </div>
         </div>
@@ -178,25 +178,25 @@ This template has been used by product teams at major African tech companies inc
                     {getTypeLabel(resource.type)}
                   </span>
                   <div className="flex items-center">
-                    <Star className="h-4 w-4 text-yellow-400 mr-1" />
+                    <Star className="h-4 w-4 text-warning mr-1" />
                     <span className="font-medium">{resource.rating}</span>
-                    <span className="text-gray-600 ml-1">({resource.totalRatings} reviews)</span>
+                    <span className="text-muted-foreground ml-1">({resource.totalRatings} reviews)</span>
                   </div>
                 </div>
-                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{resource.title}</h1>
-                <p className="text-xl text-gray-600 mb-6">{resource.description}</p>
+                <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{resource.title}</h1>
+                <p className="text-xl text-muted-foreground mb-6">{resource.description}</p>
                 
                 {/* Author Info */}
-                <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
+                <div className="flex items-center gap-4 p-4 bg-muted rounded-lg">
                   <img 
                     src={resource.author.avatar} 
                     alt={resource.author.name}
                     className="w-12 h-12 rounded-full object-cover"
                   />
                   <div>
-                    <h3 className="font-semibold text-gray-900">{resource.author.name}</h3>
-                    <p className="text-sm text-gray-600">{resource.author.role}</p>
-                    <p className="text-sm text-gray-500">{resource.author.bio}</p>
+                    <h3 className="font-semibold text-foreground">{resource.author.name}</h3>
+                    <p className="text-sm text-muted-foreground">{resource.author.role}</p>
+                    <p className="text-sm text-muted-foreground">{resource.author.bio}</p>
                   </div>
                 </div>
               </div>
@@ -212,22 +212,22 @@ This template has been used by product teams at major African tech companies inc
 
               {/* Description */}
               <div className="mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">About This Resource</h2>
+                <h2 className="text-2xl font-bold text-foreground mb-4">About This Resource</h2>
                 <div className="prose prose-gray max-w-none">
                   {resource.longDescription.split('\n\n').map((paragraph, index) => (
-                    <p key={index} className="text-gray-700 mb-4">{paragraph}</p>
+                    <p key={index} className="text-foreground mb-4">{paragraph}</p>
                   ))}
                 </div>
               </div>
 
               {/* What You Get */}
               <div className="mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">What You'll Get</h2>
+                <h2 className="text-2xl font-bold text-foreground mb-4">What You'll Get</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {resource.whatYouGet.map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-700">{item}</span>
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5 flex-shrink-0" />
+                      <span className="text-foreground">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -235,11 +235,11 @@ This template has been used by product teams at major African tech companies inc
 
               {/* Requirements */}
               <div className="mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Requirements</h2>
+                <h2 className="text-2xl font-bold text-foreground mb-4">Requirements</h2>
                 <ul className="space-y-2">
                   {resource.requirements.map((req, index) => (
-                    <li key={index} className="flex items-center gap-2 text-gray-700">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                    <li key={index} className="flex items-center gap-2 text-foreground">
+                      <div className="w-2 h-2 bg-primary rounded-full"></div>
                       {req}
                     </li>
                   ))}
@@ -248,28 +248,28 @@ This template has been used by product teams at major African tech companies inc
 
               {/* Reviews */}
               <div className="mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Reviews & Ratings</h2>
+                <h2 className="text-2xl font-bold text-foreground mb-6">Reviews & Ratings</h2>
                 
                 {/* Rating Summary */}
-                <div className="bg-gray-50 p-6 rounded-lg mb-6">
+                <div className="bg-muted p-6 rounded-lg mb-6">
                   <div className="flex items-center gap-8">
                     <div className="text-center">
-                      <div className="text-4xl font-bold text-gray-900">{resource.rating}</div>
+                      <div className="text-4xl font-bold text-foreground">{resource.rating}</div>
                       <div className="flex items-center justify-center mb-1">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} className={`h-4 w-4 ${i < Math.floor(resource.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />
+                          <Star key={i} className={`h-4 w-4 ${i < Math.floor(resource.rating) ? 'text-warning fill-current' : 'text-gray-300'}`} />
                         ))}
                       </div>
-                      <div className="text-sm text-gray-600">{resource.totalRatings} reviews</div>
+                      <div className="text-sm text-muted-foreground">{resource.totalRatings} reviews</div>
                     </div>
                     <div className="flex-1">
-                      <div className="text-sm font-medium text-gray-900 mb-2">Rate this resource:</div>
+                      <div className="text-sm font-medium text-foreground mb-2">Rate this resource:</div>
                       <div className="flex items-center gap-1">
                         {[...Array(5)].map((_, i) => (
                           <button
                             key={i}
                             onClick={() => handleRating(i + 1)}
-                            className={`h-6 w-6 ${i < rating ? 'text-yellow-400' : 'text-gray-300'} hover:text-yellow-400`}
+                            className={`h-6 w-6 ${i < rating ? 'text-warning' : 'text-gray-300'} hover:text-warning`}
                           >
                             <Star className="h-full w-full fill-current" />
                           </button>
@@ -282,7 +282,7 @@ This template has been used by product teams at major African tech companies inc
                 {/* Individual Reviews */}
                 <div className="space-y-6">
                   {reviews.map((review) => (
-                    <div key={review.id} className="border-b border-gray-200 pb-6">
+                    <div key={review.id} className="border-b border-border pb-6">
                       <div className="flex items-start gap-4">
                         <img 
                           src={review.avatar} 
@@ -291,19 +291,19 @@ This template has been used by product teams at major African tech companies inc
                         />
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-1">
-                            <h4 className="font-semibold text-gray-900">{review.user}</h4>
-                            <span className="text-sm text-gray-600">•</span>
-                            <span className="text-sm text-gray-600">{review.role}</span>
+                            <h4 className="font-semibold text-foreground">{review.user}</h4>
+                            <span className="text-sm text-muted-foreground">•</span>
+                            <span className="text-sm text-muted-foreground">{review.role}</span>
                           </div>
                           <div className="flex items-center gap-2 mb-2">
                             <div className="flex">
                               {[...Array(5)].map((_, i) => (
-                                <Star key={i} className={`h-3 w-3 ${i < review.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />
+                                <Star key={i} className={`h-3 w-3 ${i < review.rating ? 'text-warning fill-current' : 'text-gray-300'}`} />
                               ))}
                             </div>
-                            <span className="text-sm text-gray-600">{review.date}</span>
+                            <span className="text-sm text-muted-foreground">{review.date}</span>
                           </div>
-                          <p className="text-gray-700">{review.comment}</p>
+                          <p className="text-foreground">{review.comment}</p>
                         </div>
                       </div>
                     </div>
@@ -316,15 +316,15 @@ This template has been used by product teams at major African tech companies inc
             <div className="lg:col-span-1">
               <div className="sticky top-24 space-y-6">
                 {/* Download Card */}
-                <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+                <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
                   <div className="text-center mb-6">
                     <img 
                       src={resource.image} 
                       alt={resource.title}
                       className="w-full h-32 object-cover rounded-lg mb-4"
                     />
-                    <h3 className="font-semibold text-gray-900 mb-2">{resource.title}</h3>
-                    <div className="text-sm text-gray-600 space-y-1">
+                    <h3 className="font-semibold text-foreground mb-2">{resource.title}</h3>
+                    <div className="text-sm text-muted-foreground space-y-1">
                       <div>Format: {resource.format}</div>
                       <div>Size: {resource.fileSize}</div>
                       <div>Updated: {new Date(resource.lastUpdated).toLocaleDateString()}</div>
@@ -334,24 +334,24 @@ This template has been used by product teams at major African tech companies inc
                   {!isDownloaded ? (
                     <button 
                       onClick={handleDownload}
-                      className="w-full bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition-colors duration-200 flex items-center justify-center space-x-2 mb-4"
+                      className="w-full bg-primary text-primary-foreground py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center space-x-2 mb-4"
                     >
                       <Download className="h-5 w-5" />
                       <span>Download Now</span>
                     </button>
                   ) : (
-                    <div className="w-full bg-green-100 text-green-800 py-3 rounded-lg flex items-center justify-center space-x-2 mb-4">
+                    <div className="w-full bg-success/15 text-success py-3 rounded-lg flex items-center justify-center space-x-2 mb-4">
                       <CheckCircle className="h-5 w-5" />
                       <span>Downloaded</span>
                     </div>
                   )}
                   
                   <div className="flex space-x-2">
-                    <button className="flex-1 border border-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-50 transition-colors duration-200 flex items-center justify-center space-x-1">
+                    <button className="flex-1 border border-input text-foreground py-2 rounded-lg hover:bg-accent transition-colors duration-200 flex items-center justify-center space-x-1">
                       <Heart className="h-4 w-4" />
                       <span>Save</span>
                     </button>
-                    <button className="flex-1 border border-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-50 transition-colors duration-200 flex items-center justify-center space-x-1">
+                    <button className="flex-1 border border-input text-foreground py-2 rounded-lg hover:bg-accent transition-colors duration-200 flex items-center justify-center space-x-1">
                       <Share2 className="h-4 w-4" />
                       <span>Share</span>
                     </button>
@@ -359,27 +359,27 @@ This template has been used by product teams at major African tech companies inc
                 </div>
 
                 {/* Stats */}
-                <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-                  <h3 className="font-semibold text-gray-900 mb-4">Resource Stats</h3>
+                <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
+                  <h3 className="font-semibold text-foreground mb-4">Resource Stats</h3>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
-                        <Download className="h-4 w-4 text-gray-400 mr-2" />
-                        <span className="text-sm text-gray-600">Downloads</span>
+                        <Download className="h-4 w-4 text-muted-foreground mr-2" />
+                        <span className="text-sm text-muted-foreground">Downloads</span>
                       </div>
                       <span className="font-medium">{resource.downloads.toLocaleString()}</span>
                     </div>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
-                        <Eye className="h-4 w-4 text-gray-400 mr-2" />
-                        <span className="text-sm text-gray-600">Views</span>
+                        <Eye className="h-4 w-4 text-muted-foreground mr-2" />
+                        <span className="text-sm text-muted-foreground">Views</span>
                       </div>
                       <span className="font-medium">{resource.views.toLocaleString()}</span>
                     </div>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
-                        <Calendar className="h-4 w-4 text-gray-400 mr-2" />
-                        <span className="text-sm text-gray-600">Published</span>
+                        <Calendar className="h-4 w-4 text-muted-foreground mr-2" />
+                        <span className="text-sm text-muted-foreground">Published</span>
                       </div>
                       <span className="font-medium">{new Date(resource.date).toLocaleDateString()}</span>
                     </div>
@@ -387,11 +387,11 @@ This template has been used by product teams at major African tech companies inc
                 </div>
 
                 {/* Tags */}
-                <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-                  <h3 className="font-semibold text-gray-900 mb-4">Tags</h3>
+                <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
+                  <h3 className="font-semibold text-foreground mb-4">Tags</h3>
                   <div className="flex flex-wrap gap-2">
                     {resource.tags.map((tag, index) => (
-                      <span key={index} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm hover:bg-orange-100 hover:text-orange-700 cursor-pointer transition-colors duration-200">
+                      <span key={index} className="bg-muted text-foreground px-3 py-1 rounded-full text-sm hover:bg-primary/10 hover:text-primary cursor-pointer transition-colors duration-200">
                         {tag}
                       </span>
                     ))}
@@ -399,22 +399,22 @@ This template has been used by product teams at major African tech companies inc
                 </div>
 
                 {/* Related Resources */}
-                <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-                  <h3 className="font-semibold text-gray-900 mb-4">Related Resources</h3>
+                <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
+                  <h3 className="font-semibold text-foreground mb-4">Related Resources</h3>
                   <div className="space-y-4">
                     {relatedResources.map((related) => (
-                      <div key={related.id} className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors duration-200">
+                      <div key={related.id} className="flex items-center gap-3 p-3 rounded-lg hover:bg-accent cursor-pointer transition-colors duration-200">
                         <img 
                           src={related.image} 
                           alt={related.title}
                           className="w-12 h-12 object-cover rounded"
                         />
                         <div className="flex-1 min-w-0">
-                          <h4 className="font-medium text-gray-900 text-sm truncate">{related.title}</h4>
-                          <div className="flex items-center text-xs text-gray-500">
+                          <h4 className="font-medium text-foreground text-sm truncate">{related.title}</h4>
+                          <div className="flex items-center text-xs text-muted-foreground">
                             <Download className="h-3 w-3 mr-1" />
                             {related.downloads.toLocaleString()}
-                            <Star className="h-3 w-3 ml-2 mr-1 text-yellow-400" />
+                            <Star className="h-3 w-3 ml-2 mr-1 text-warning" />
                             {related.rating}
                           </div>
                         </div>

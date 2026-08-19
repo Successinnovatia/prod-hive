@@ -104,16 +104,16 @@ const JobAlertModal: React.FC<JobAlertModalProps> = ({ isOpen, onClose }) => {
 
   if (isSubmitted) {
     return (
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-        <div className="bg-white rounded-xl max-w-md w-full p-8 text-center">
-          <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Job Alert Created!</h2>
-          <p className="text-gray-600 mb-6">
+      <div className="fixed inset-0 bg-foreground/50 flex items-center justify-center z-50 p-4">
+        <div className="bg-card rounded-xl max-w-md w-full p-8 text-center">
+          <CheckCircle className="h-16 w-16 text-success mx-auto mb-4" />
+          <h2 className="text-2xl font-bold text-foreground mb-4">Job Alert Created!</h2>
+          <p className="text-muted-foreground mb-6">
             You'll receive {formData.frequency} notifications about new PM jobs matching your criteria. 
             You can manage your alerts anytime from your profile.
           </p>
-          <div className="bg-blue-50 p-4 rounded-lg">
-            <p className="text-sm text-blue-800">
+          <div className="bg-accent p-4 rounded-lg">
+            <p className="text-sm text-primary">
               💡 <strong>Pro Tip:</strong> Set up multiple alerts with different criteria to catch all relevant opportunities!
             </p>
           </div>
@@ -123,19 +123,19 @@ const JobAlertModal: React.FC<JobAlertModalProps> = ({ isOpen, onClose }) => {
   }
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-        <div className="flex items-center justify-between p-6 border-b border-gray-200">
+    <div className="fixed inset-0 bg-foreground/50 flex items-center justify-center z-50 p-4">
+      <div className="bg-card rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div className="flex items-center justify-between p-6 border-b border-border">
           <div className="flex items-center">
-            <div className="bg-blue-500 p-2 rounded-lg mr-3">
-              <Bell className="h-6 w-6 text-white" />
+            <div className="bg-primary p-2 rounded-lg mr-3">
+              <Bell className="h-6 w-6 text-primary-foreground" />
             </div>
             <div>
-              <h2 className="text-xl font-bold text-gray-900">Create Job Alert</h2>
-              <p className="text-gray-600">Get notified when new jobs match your criteria</p>
+              <h2 className="text-xl font-bold text-foreground">Create Job Alert</h2>
+              <p className="text-muted-foreground">Get notified when new jobs match your criteria</p>
             </div>
           </div>
-          <button onClick={onClose} className="text-gray-400 hover:text-gray-600">
+          <button onClick={onClose} className="text-muted-foreground hover:text-muted-foreground">
             <X className="h-6 w-6" />
           </button>
         </div>
@@ -143,43 +143,43 @@ const JobAlertModal: React.FC<JobAlertModalProps> = ({ isOpen, onClose }) => {
         <form onSubmit={handleSubmit} className="p-6 space-y-6">
           {/* Email */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+            <label className="block text-sm font-medium text-foreground mb-2">Email Address *</label>
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
-                errors.email ? 'border-red-500' : 'border-gray-300'
+                errors.email ? 'border-destructive' : 'border-input'
               }`}
               placeholder="your.email@example.com"
             />
-            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+            {errors.email && <p className="text-destructive text-sm mt-1">{errors.email}</p>}
           </div>
 
           {/* Job Title Keywords */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Job Title Keywords</label>
+            <label className="block text-sm font-medium text-foreground mb-2">Job Title Keywords</label>
             <input
               type="text"
               name="jobTitle"
               value={formData.jobTitle}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               placeholder="e.g., Product Manager, Senior PM, Product Lead"
             />
-            <p className="text-sm text-gray-500 mt-1">Leave empty to get alerts for all PM roles</p>
+            <p className="text-sm text-muted-foreground mt-1">Leave empty to get alerts for all PM roles</p>
           </div>
 
           {/* Filters */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Location</label>
+              <label className="block text-sm font-medium text-foreground mb-2">Location</label>
               <select
                 name="location"
                 value={formData.location}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               >
                 {locations.map(location => (
                   <option key={location.id} value={location.id}>{location.name}</option>
@@ -188,12 +188,12 @@ const JobAlertModal: React.FC<JobAlertModalProps> = ({ isOpen, onClose }) => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Experience Level</label>
+              <label className="block text-sm font-medium text-foreground mb-2">Experience Level</label>
               <select
                 name="experienceLevel"
                 value={formData.experienceLevel}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               >
                 {experienceLevels.map(level => (
                   <option key={level.id} value={level.id}>{level.name}</option>
@@ -202,12 +202,12 @@ const JobAlertModal: React.FC<JobAlertModalProps> = ({ isOpen, onClose }) => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Job Type</label>
+              <label className="block text-sm font-medium text-foreground mb-2">Job Type</label>
               <select
                 name="jobType"
                 value={formData.jobType}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               >
                 {jobTypes.map(type => (
                   <option key={type.id} value={type.id}>{type.name}</option>
@@ -216,12 +216,12 @@ const JobAlertModal: React.FC<JobAlertModalProps> = ({ isOpen, onClose }) => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Salary Range</label>
+              <label className="block text-sm font-medium text-foreground mb-2">Salary Range</label>
               <select
                 name="salaryRange"
                 value={formData.salaryRange}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               >
                 {salaryRanges.map(range => (
                   <option key={range.id} value={range.id}>{range.name}</option>
@@ -232,12 +232,12 @@ const JobAlertModal: React.FC<JobAlertModalProps> = ({ isOpen, onClose }) => {
 
           {/* Notification Frequency */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Notification Frequency</label>
+            <label className="block text-sm font-medium text-foreground mb-2">Notification Frequency</label>
             <select
               name="frequency"
               value={formData.frequency}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             >
               {frequencies.map(freq => (
                 <option key={freq.id} value={freq.id}>{freq.name}</option>
@@ -246,9 +246,9 @@ const JobAlertModal: React.FC<JobAlertModalProps> = ({ isOpen, onClose }) => {
           </div>
 
           {/* Alert Preview */}
-          <div className="bg-blue-50 p-4 rounded-lg">
+          <div className="bg-accent p-4 rounded-lg">
             <h3 className="font-medium text-blue-900 mb-2">Alert Preview</h3>
-            <p className="text-sm text-blue-800">
+            <p className="text-sm text-primary">
               You'll receive {formData.frequency} emails about{' '}
               {formData.jobTitle ? `"${formData.jobTitle}"` : 'Product Manager'} jobs{' '}
               {formData.location !== 'all' && `in ${locations.find(l => l.id === formData.location)?.name}`}
@@ -262,13 +262,13 @@ const JobAlertModal: React.FC<JobAlertModalProps> = ({ isOpen, onClose }) => {
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 border border-gray-300 text-gray-700 py-3 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+              className="flex-1 border border-input text-foreground py-3 rounded-lg hover:bg-accent transition-colors duration-200"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="flex-1 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center space-x-2"
+              className="flex-1 bg-primary text-primary-foreground py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center space-x-2"
             >
               <Bell className="h-4 w-4" />
               <span>Create Alert</span>

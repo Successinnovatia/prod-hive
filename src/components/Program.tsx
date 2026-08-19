@@ -86,13 +86,13 @@ const Program = () => {
   ];
 
   return (
-    <section id="program" className="py-20 bg-white">
+    <section id="program" className="py-20 bg-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Comprehensive Transition Program
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Our 12-week intensive program is designed specifically for African
             tech professionals looking to transition into product management
             roles.
@@ -103,41 +103,41 @@ const Program = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {features.map((feature, index) => (
             <div key={index} className="text-center p-6">
-              <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="text-orange-600">{feature.icon}</div>
+              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="text-primary">{feature.icon}</div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-foreground mb-2">
                 {feature.title}
               </h3>
-              <p className="text-gray-600">{feature.description}</p>
+              <p className="text-muted-foreground">{feature.description}</p>
             </div>
           ))}
         </div>
 
         {/* Curriculum */}
-        <div className="bg-gray-50 rounded-2xl p-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+        <div className="bg-muted rounded-2xl p-8">
+          <h3 className="text-2xl font-bold text-foreground mb-8 text-center">
             Program Curriculum
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {modules.map((module, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200"
+                className="bg-card p-6 rounded-lg border border-border shadow-sm hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-glow transition-all duration-180"
               >
                 <div className="flex items-center mb-4">
-                  <span className="bg-orange-600 text-white text-sm px-3 py-1 rounded-full font-medium">
+                  <span className="bg-primary text-primary-foreground text-sm px-3 py-1 rounded-full font-medium">
                     {module.week}
                   </span>
                 </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                <h4 className="text-lg font-semibold text-foreground mb-3">
                   {module.title}
                 </h4>
                 <ul className="space-y-2">
                   {module.topics.map((topic, topicIndex) => (
                     <li
                       key={topicIndex}
-                      className="flex items-center text-gray-600"
+                      className="flex items-center text-muted-foreground"
                     >
                       <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
                       {topic}
@@ -149,7 +149,7 @@ const Program = () => {
           </div>
           <div className="text-center mt-8">
             <Link to="/register">
-              <button className="bg-orange-600 text-white px-8 py-3 rounded-lg hover:bg-orange-700 transition-colors duration-200">
+              <button className="bg-primary text-primary-foreground px-8 py-3 rounded-lg hover:bg-primary/90 shadow-glow transition-all duration-180">
                 Enroll Now - Next Cohort Starts Soon
               </button>
             </Link>
