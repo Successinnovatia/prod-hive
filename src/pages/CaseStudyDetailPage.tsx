@@ -212,7 +212,7 @@ const CaseStudyDetailPage = () => {
                 </div>
               </div>
               <div class="bg-accent p-6 rounded-lg">
-                <h4 class="font-semibold text-blue-900 mb-3">The Opportunity</h4>
+                <h4 class="font-semibold text-foreground mb-3">The Opportunity</h4>
                 <p class="text-primary">Despite these challenges, Kenya had high mobile phone penetration (65% in 2007) and a strong need for money transfer solutions, creating a perfect opportunity for mobile-based financial services.</p>
               </div>
             </div>
@@ -231,7 +231,7 @@ const CaseStudyDetailPage = () => {
               <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
                   <h4 class="font-semibold text-foreground mb-4">
-                    <Smartphone class="h-5 w-5 mr-2 text-blue-500" />
+                    <Smartphone class="h-5 w-5 mr-2 text-primary" />
                     Technical Foundation
                   </h4>
                   <div class="space-y-4">
@@ -332,8 +332,8 @@ const CaseStudyDetailPage = () => {
             <div class="space-y-6">
               <p class="text-lg text-foreground leading-relaxed">M-Pesa's execution strategy focused on gradual trust-building, regulatory partnership, and systematic scaling across Kenya and beyond.</p>
               <div class="space-y-8">
-                <div class="bg-accent border-l-4 border-blue-500 p-6 rounded-r-lg">
-                  <h3 class="text-lg font-semibold text-blue-900 mb-3">
+                <div class="bg-accent border-l-4 border-primary p-6 rounded-r-lg">
+                  <h3 class="text-lg font-semibold text-foreground mb-3">
                     <Calendar class="h-5 w-5 mr-2" />
                     Phase 1: Pilot and Learning (2007-2008)
                   </h3>
@@ -675,7 +675,7 @@ const CaseStudyDetailPage = () => {
                   
                   <div class="space-y-6">
                     <div class="bg-accent border border-primary/30 rounded-lg p-6">
-                      <h4 class="font-semibold text-blue-900 mb-4">
+                      <h4 class="font-semibold text-foreground mb-4">
                         <Globe class="h-5 w-5 mr-2" />
                         Cultural and Language Diversity
                       </h4>
@@ -843,7 +843,7 @@ const CaseStudyDetailPage = () => {
                   
                   <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                     <div class="bg-accent p-6 rounded-lg">
-                      <h4 class="font-semibold text-blue-900 mb-4">
+                      <h4 class="font-semibold text-foreground mb-4">
                         <Target class="h-5 w-5 mr-2" />
                         Core Platform Components
                       </h4>
@@ -991,7 +991,7 @@ const CaseStudyDetailPage = () => {
                     </div>
     
                     <div class="bg-accent border border-primary/30 rounded-lg p-6">
-                      <h4 class="font-semibold text-blue-900 mb-4">
+                      <h4 class="font-semibold text-foreground mb-4">
                         <Smartphone class="h-5 w-5 mr-2" />
                         Product Catalog Adaptation
                       </h4>
@@ -1102,8 +1102,8 @@ const CaseStudyDetailPage = () => {
                   <p class="text-lg text-foreground leading-relaxed">Jumia's execution strategy focused on phased expansion, learning from each market entry, and building operational excellence before scaling to new countries.</p>
                   
                   <div class="space-y-8">
-                    <div class="bg-accent border-l-4 border-blue-500 p-6 rounded-r-lg">
-                      <h3 class="text-lg font-semibold text-blue-900 mb-3">
+                    <div class="bg-accent border-l-4 border-primary p-6 rounded-r-lg">
+                      <h3 class="text-lg font-semibold text-foreground mb-3">
                         <Calendar class="h-5 w-5 mr-2" />
                         Phase 1: Foundation Markets (2012-2014)
                       </h3>
@@ -1432,7 +1432,7 @@ const CaseStudyDetailPage = () => {
                     </div>
     
                     <div class="bg-accent border border-primary/30 rounded-lg p-6">
-                      <h3 class="text-lg font-semibold text-blue-900 mb-4">
+                      <h3 class="text-lg font-semibold text-foreground mb-4">
                         <Users class="h-5 w-5 mr-2" />
                         Challenge 3: Supplier Network Management
                       </h3>
@@ -1620,7 +1620,7 @@ const CaseStudyDetailPage = () => {
     
                   <div class="space-y-8">
                     <div class="bg-gradient-to-r from-accent to-secondary p-6 rounded-lg">
-                      <h3 class="text-xl font-semibold text-blue-900 mb-4">
+                      <h3 class="text-xl font-semibold text-foreground mb-4">
                         <TrendingUp class="h-6 w-6 mr-2" />
                         Business Performance Metrics
                       </h3>
@@ -2399,7 +2399,7 @@ const CaseStudyDetailPage = () => {
                         `${caseStudy.title} - ${downloadFormat.toUpperCase()}`
                       )
                     }
-                    className="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center space-x-2"
+                    className="btn-fill px-6 py-3 rounded-lg transition-colors duration-200 flex items-center space-x-2"
                   >
                     <Download className="h-5 w-5" />
                     <span>Download Case Study</span>
@@ -2463,7 +2463,7 @@ const CaseStudyDetailPage = () => {
                       onClick={() => setActiveSection(section.id)}
                       className={`block w-full text-left px-4 py-2 rounded-lg transition-colors text-sm font-medium ${
                         activeSection === section.id
-                          ? "bg-primary text-primary-foreground"
+                          ? "btn-fill"
                           : "text-foreground hover:bg-accent hover:text-primary"
                       }`}
                     >
@@ -2666,7 +2666,7 @@ const CaseStudyDetailPage = () => {
                   className="bg-card border border-border rounded-lg p-4 hover:shadow-lg transition-colors"
                 >
                   <div className="flex items-center justify-between mb-3">
-                    <span className="bg-blue-400 text-primary-foreground px-2 py-1 rounded text-xs font-medium">
+                    <span className="bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-medium">
                       {related.category}
                     </span>
                     <div className="flex items-center text-sm text-muted-foreground">
@@ -2678,7 +2678,7 @@ const CaseStudyDetailPage = () => {
                     {related.title}
                   </h3>
                   <div className="text-sm text-muted-foreground">{related.company}</div>
-                  <div className="mt-2 flex items-center text-blue-500 text-xs font-medium">
+                  <div className="mt-2 flex items-center text-primary text-xs font-medium">
                     <span>Read Case Study</span>
                     <ArrowRight className="h-4 w-4 ml-1" />
                   </div>

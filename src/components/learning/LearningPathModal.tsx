@@ -80,7 +80,7 @@ const LearningPathModal: React.FC<LearningPathModalProps> = ({ isOpen, onClose, 
         <div className="p-6">
           {/* Path Overview */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div className="bg-blue-50 p-4 rounded-lg text-center">
+            <div className="bg-primary/10 p-4 rounded-lg text-center">
               <Clock className="h-8 w-8 text-primary mx-auto mb-2" />
               <div className="font-semibold text-foreground">{path.duration}</div>
               <div className="text-sm text-muted-foreground">Total Duration</div>
@@ -127,13 +127,13 @@ const LearningPathModal: React.FC<LearningPathModalProps> = ({ isOpen, onClose, 
                   <div key={index} className={`flex items-center p-4 rounded-lg border-2 transition-all duration-200 ${
                     status === 'completed' ? 'bg-success/10 border-success/30' :
                     status === 'current' ? 'bg-accent border-primary/30' :
-                    status === 'available' ? 'bg-blue-50 border-primary/30' :
+                    status === 'available' ? 'bg-primary/10 border-primary/30' :
                     'bg-muted border-border'
                   }`}>
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center mr-4 ${
                       status === 'completed' ? 'bg-success/100 text-primary-foreground' :
-                      status === 'current' ? 'bg-primary text-primary-foreground' :
-                      status === 'available' ? 'bg-blue-500 text-primary-foreground' :
+                      status === 'current' ? 'btn-fill' :
+                      status === 'available' ? 'bg-primary/100 text-primary-foreground' :
                       'bg-gray-300 text-muted-foreground'
                     }`}>
                       {status === 'completed' ? (
@@ -155,7 +155,7 @@ const LearningPathModal: React.FC<LearningPathModalProps> = ({ isOpen, onClose, 
                     {status === 'current' && enrolledSteps.length > 0 && (
                       <button
                         onClick={() => completeStep(index)}
-                        className="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200 text-sm"
+                        className="btn-fill px-4 py-2 rounded-lg transition-colors duration-200 text-sm"
                       >
                         Complete Step
                       </button>
@@ -175,7 +175,7 @@ const LearningPathModal: React.FC<LearningPathModalProps> = ({ isOpen, onClose, 
             {enrolledSteps.length === 0 ? (
               <button 
                 onClick={handleEnroll}
-                className="flex-1 bg-primary text-primary-foreground py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center space-x-2"
+                className="flex-1 btn-fill py-3 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
               >
                 <Target className="h-5 w-5" />
                 <span>Start Learning Path</span>

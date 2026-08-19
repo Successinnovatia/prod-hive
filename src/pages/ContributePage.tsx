@@ -137,7 +137,7 @@ const ContributePage = () => {
                 </div>
                 <button
                   onClick={() => setIsSubmitted(false)}
-                  className="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 mr-4"
+                  className="btn-fill px-6 py-3 rounded-lg transition-colors duration-200 mr-4"
                 >
                   Submit Another Resource
                 </button>
@@ -522,7 +522,7 @@ const ContributePage = () => {
 
                   <button
                     type="submit"
-                    className="w-full bg-primary text-primary-foreground px-6 py-4 rounded-lg hover:bg-primary/90 transition-colors duration-200 font-semibold"
+                    className="w-full btn-fill px-6 py-4 rounded-lg transition-colors duration-200 font-semibold"
                   >
                     Submit Resource for Review
                   </button>
@@ -586,7 +586,7 @@ const ContributePage = () => {
                     Have questions about contributing? Our team is here to help.
                   </p>
                   <Link to="/support">
-                    <button className="w-full bg-primary text-primary-foreground py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200 text-sm">
+                    <button className="w-full btn-fill py-2 rounded-lg transition-colors duration-200 text-sm">
                       Contact Support
                     </button>
                   </Link>

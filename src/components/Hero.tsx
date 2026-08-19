@@ -22,12 +22,12 @@ const Hero = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link to="/register">
-              <button className="bg-primary text-primary-foreground px-8 py-4 rounded-lg hover:bg-primary/90 shadow-glow transition-all duration-180 flex items-center justify-center space-x-2">
+              <button className="btn-fill px-8 py-4 rounded-lg transition-all duration-180 flex items-center justify-center space-x-2">
                 <span>Start Your Journey</span>
                 <ArrowRight className="h-5 w-5" />
               </button>
             </Link>
-            <a href="#community" className="border border-border bg-card/70 text-foreground px-8 py-4 rounded-lg hover:border-primary/50 hover:text-primary transition-all duration-180">
+            <a href="#community" className="border-2 border-primary/70 text-primary px-8 py-4 rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-180 font-semibold">
               Explore Community
             </a>
           </div>

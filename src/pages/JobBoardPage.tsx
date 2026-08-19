@@ -563,7 +563,7 @@ const JobBoardPage = () => {
                   </select>
                   <button
                     onClick={() => setShowFilters(!showFilters)}
-                    className="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center space-x-2"
+                    className="btn-fill px-6 py-3 rounded-lg transition-colors duration-200 flex items-center space-x-2"
                   >
                     <Filter className="h-5 w-5" />
                     <span>Filters</span>
@@ -745,7 +745,7 @@ const JobBoardPage = () => {
                   <div className="flex space-x-2">
                     <button
                       onClick={() => handleApplyClick(job)}
-                      className="flex-1 bg-primary text-primary-foreground py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center space-x-2"
+                      className="flex-1 btn-fill py-2 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
                     >
                       <span>Apply Now</span>
                       <ExternalLink className="h-4 w-4" />
@@ -780,7 +780,7 @@ const JobBoardPage = () => {
                 </p>
                 <button
                   onClick={handleCreateAlert}
-                  className="w-full bg-primary text-primary-foreground py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200 mb-6"
+                  className="w-full btn-fill py-2 rounded-lg transition-colors duration-200 mb-6"
                 >
                   Create Job Alert
                 </button>
@@ -929,7 +929,7 @@ const JobBoardPage = () => {
                       <div className="flex space-x-3">
                         <button
                           onClick={() => handleApplyClick(job)}
-                          className="bg-primary text-primary-foreground px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center space-x-2"
+                          className="btn-fill px-6 py-2 rounded-lg transition-colors duration-200 flex items-center space-x-2"
                         >
                           <span>Apply Now</span>
                           <ExternalLink className="h-4 w-4" />

@@ -101,7 +101,7 @@ const Header = () => {
             </Link>
             <Link
               to="/register"
-              className="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 shadow-glow transition-all duration-180"
+              className="btn-fill px-4 py-2 rounded-lg transition-all duration-180"
             >
               Join Program
             </Link>
@@ -183,7 +183,7 @@ const Header = () => {
                 </Link>
                 <Link
                   to="/register"
-                  className="block w-full bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 shadow-glow transition-all duration-180 text-center"
+                  className="block w-full btn-fill px-4 py-2 rounded-lg shadow-glow transition-all duration-180 text-center"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Join Program

@@ -98,7 +98,7 @@ const Community = () => {
               <div className="text-muted-foreground">Active Members</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">12</div>
+              <div className="text-3xl font-bold text-primary mb-2">12</div>
               <div className="text-muted-foreground">Countries</div>
             </div>
             <div>

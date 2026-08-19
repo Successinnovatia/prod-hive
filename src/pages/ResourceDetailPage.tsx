@@ -334,7 +334,7 @@ This template has been used by product teams at major African tech companies inc
                   {!isDownloaded ? (
                     <button 
                       onClick={handleDownload}
-                      className="w-full bg-primary text-primary-foreground py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center space-x-2 mb-4"
+                      className="w-full btn-fill py-3 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2 mb-4"
                     >
                       <Download className="h-5 w-5" />
                       <span>Download Now</span>

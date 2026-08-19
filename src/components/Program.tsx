@@ -126,7 +126,7 @@ const Program = () => {
                 className="bg-card p-6 rounded-lg border border-border shadow-sm hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-glow transition-all duration-180"
               >
                 <div className="flex items-center mb-4">
-                  <span className="bg-primary text-primary-foreground text-sm px-3 py-1 rounded-full font-medium">
+                  <span className="btn-fill text-sm px-3 py-1 rounded-full font-medium">
                     {module.week}
                   </span>
                 </div>
@@ -149,7 +149,7 @@ const Program = () => {
           </div>
           <div className="text-center mt-8">
             <Link to="/register">
-              <button className="bg-primary text-primary-foreground px-8 py-3 rounded-lg hover:bg-primary/90 shadow-glow transition-all duration-180">
+              <button className="btn-fill px-8 py-3 rounded-lg shadow-glow transition-all duration-180">
                 Enroll Now - Next Cohort Starts Soon
               </button>
             </Link>

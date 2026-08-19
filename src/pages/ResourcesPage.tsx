@@ -188,7 +188,7 @@ const ResourcesPage = () => {
                   className="w-full pl-10 pr-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                 />
               </div>
-              <button className="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center space-x-2">
+              <button className="btn-fill px-6 py-3 rounded-lg transition-colors duration-200 flex items-center space-x-2">
                 <Filter className="h-5 w-5" />
                 <span>Filter</span>
               </button>
@@ -240,7 +240,7 @@ const ResourcesPage = () => {
                   </div>
                   <button 
                     onClick={() => handleDownload(resource.filename)}
-                    className="w-full bg-primary text-primary-foreground py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center space-x-2"
+                    className="w-full btn-fill py-2 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
                   >
                     <Download className="h-4 w-4" />
                     <span>Download Resource</span>

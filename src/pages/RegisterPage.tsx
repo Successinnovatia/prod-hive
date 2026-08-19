@@ -363,7 +363,7 @@ const RegisterPage = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-primary text-primary-foreground py-4 rounded-lg hover:bg-primary/90 transition-all duration-200 font-semibold flex items-center justify-center space-x-2 hover:scale-105"
+                className="w-full btn-fill py-4 rounded-lg transition-all duration-200 font-semibold flex items-center justify-center space-x-2 hover:scale-105"
               >
                 <span>Create Account</span>
                 <ArrowRight className="h-5 w-5" />

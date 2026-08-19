@@ -74,25 +74,11 @@ const AboutPage = () => {
       title: "Inclusive Growth",
       description:
         "We are committed to creating opportunities for everyone, regardless of background, gender, or previous experience. Diversity drives innovation.",
-      color: "bg-blue-500",
+      color: "bg-primary/100",
     },
   ];
 
   const team = [
-    {
-      name: "Oghenetega Apollos",
-      role: "CEO",
-      location: "Lagos, Nigeria",
-      bio: "Former Senior PM at Flutterwave with 8+ years building fintech products across West Africa. Passionate about democratizing product management education.",
-      image: "/images/about-img-1.jpg",
-      linkedin: "#",
-      twitter: "#",
-      achievements: [
-        "Built payment products serving 10M+ users",
-        "Led product teams across 5 countries",
-        "Mentored 50+ aspiring PMs",
-      ],
-    },
     {
       name: "David Ochieng",
       role: "Head of Programs",
@@ -296,7 +282,7 @@ const AboutPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link to="/register">
-                <button className="bg-primary text-primary-foreground px-8 py-4 rounded-lg hover:bg-primary/90 shadow-glow transition-all duration-180 flex items-center justify-center space-x-2">
+                <button className="btn-fill px-8 py-4 rounded-lg shadow-glow transition-all duration-180 flex items-center justify-center space-x-2">
                   <span>Join Our Mission</span>
                   <ArrowRight className="h-5 w-5" />
                 </button>

@@ -612,7 +612,7 @@ const LearningPage = () => {
                         <div className="flex space-x-3">
                           <button
                             onClick={() => handleStartCourse(course)}
-                            className="flex-1 bg-primary text-primary-foreground py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center space-x-2"
+                            className="flex-1 btn-fill py-2 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
                           >
                             <Play className="h-4 w-4" />
                             <span>Start Course</span>
@@ -748,7 +748,7 @@ const LearningPage = () => {
 
                 <button
                   onClick={() => handleDownloadGuide(guide.filename)}
-                  className="w-full bg-primary text-primary-foreground py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center space-x-2"
+                  className="w-full btn-fill py-2 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
                 >
                   <Download className="h-4 w-4" />
                   <span>Download Guide</span>

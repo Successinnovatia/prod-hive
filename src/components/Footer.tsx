@@ -62,7 +62,7 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Mail className="h-4 w-4 text-primary" />
-                  <span className="text-footer-foreground/70">hello@pmafrica.com</span>
+                  <span className="text-footer-foreground/70">hello@techpod.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="h-4 w-4 text-primary" />
@@ -142,7 +142,7 @@ const Footer = () => {
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-3 rounded-lg bg-footer-foreground/5 border border-footer-foreground/10 text-footer-foreground placeholder:text-footer-foreground/50 focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring"
               />
-              <button className="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 shadow-glow transition-all duration-180 font-semibold whitespace-nowrap">
+              <button className="btn-fill px-6 py-3 rounded-lg shadow-glow transition-all duration-180 font-semibold whitespace-nowrap">
                 Subscribe
               </button>
             </div>

@@ -15,7 +15,7 @@ const Resources = () => {
     {
       title: 'Templates & Frameworks',
       icon: <FileText className="h-6 w-6" />,
-      color: 'bg-blue-500',
+      color: 'bg-primary/100',
       href: '/templates',
       resources: [
         { name: 'Product Requirements Document', type: 'Template', downloads: '2.3k', filename: 'african-market-prd-template.pdf' },
@@ -109,7 +109,7 @@ const Resources = () => {
                   </div>
                   <button 
                     onClick={() => handleDownload(resource.filename)}
-                    className="bg-primary text-primary-foreground px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center space-x-2"
+                    className="btn-fill px-6 py-2 rounded-lg transition-colors duration-200 flex items-center space-x-2"
                   >
                     <Download className="h-4 w-4" />
                     <span>Download Now</span>

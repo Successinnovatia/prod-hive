@@ -40,7 +40,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
     document
       .querySelector('meta[name="theme-color"]')
-      ?.setAttribute('content', theme === 'dark' ? '#0B1120' : '#2563EB');
+      ?.setAttribute('content', theme === 'dark' ? '#18181B' : '#0d9488');
   }, [theme]);
 
   const value = useMemo(

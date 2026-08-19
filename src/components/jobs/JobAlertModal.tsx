@@ -149,7 +149,7 @@ const JobAlertModal: React.FC<JobAlertModalProps> = ({ isOpen, onClose }) => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
+              className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-ring focus:border-ring ${
                 errors.email ? 'border-destructive' : 'border-input'
               }`}
               placeholder="your.email@example.com"
@@ -165,7 +165,7 @@ const JobAlertModal: React.FC<JobAlertModalProps> = ({ isOpen, onClose }) => {
               name="jobTitle"
               value={formData.jobTitle}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
               placeholder="e.g., Product Manager, Senior PM, Product Lead"
             />
             <p className="text-sm text-muted-foreground mt-1">Leave empty to get alerts for all PM roles</p>
@@ -179,7 +179,7 @@ const JobAlertModal: React.FC<JobAlertModalProps> = ({ isOpen, onClose }) => {
                 name="location"
                 value={formData.location}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
               >
                 {locations.map(location => (
                   <option key={location.id} value={location.id}>{location.name}</option>
@@ -193,7 +193,7 @@ const JobAlertModal: React.FC<JobAlertModalProps> = ({ isOpen, onClose }) => {
                 name="experienceLevel"
                 value={formData.experienceLevel}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
               >
                 {experienceLevels.map(level => (
                   <option key={level.id} value={level.id}>{level.name}</option>
@@ -207,7 +207,7 @@ const JobAlertModal: React.FC<JobAlertModalProps> = ({ isOpen, onClose }) => {
                 name="jobType"
                 value={formData.jobType}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
               >
                 {jobTypes.map(type => (
                   <option key={type.id} value={type.id}>{type.name}</option>
@@ -221,7 +221,7 @@ const JobAlertModal: React.FC<JobAlertModalProps> = ({ isOpen, onClose }) => {
                 name="salaryRange"
                 value={formData.salaryRange}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
               >
                 {salaryRanges.map(range => (
                   <option key={range.id} value={range.id}>{range.name}</option>
@@ -237,7 +237,7 @@ const JobAlertModal: React.FC<JobAlertModalProps> = ({ isOpen, onClose }) => {
               name="frequency"
               value={formData.frequency}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
             >
               {frequencies.map(freq => (
                 <option key={freq.id} value={freq.id}>{freq.name}</option>
@@ -247,7 +247,7 @@ const JobAlertModal: React.FC<JobAlertModalProps> = ({ isOpen, onClose }) => {
 
           {/* Alert Preview */}
           <div className="bg-accent p-4 rounded-lg">
-            <h3 className="font-medium text-blue-900 mb-2">Alert Preview</h3>
+            <h3 className="font-medium text-foreground mb-2">Alert Preview</h3>
             <p className="text-sm text-primary">
               You'll receive {formData.frequency} emails about{' '}
               {formData.jobTitle ? `"${formData.jobTitle}"` : 'Product Manager'} jobs{' '}
@@ -268,7 +268,7 @@ const JobAlertModal: React.FC<JobAlertModalProps> = ({ isOpen, onClose }) => {
             </button>
             <button
               type="submit"
-              className="flex-1 bg-primary text-primary-foreground py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center space-x-2"
+              className="flex-1 btn-fill py-3 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
             >
               <Bell className="h-4 w-4" />
               <span>Create Alert</span>

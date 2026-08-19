@@ -10,13 +10,13 @@
     --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-    --primary: 221 83% 53%;
+    --primary: 173 84% 32%;
     --primary-foreground: 0 0% 100%;
     --secondary: 210 40% 96%;
     --secondary-foreground: 222 47% 11%;
     --muted: 210 40% 96%;
     --muted-foreground: 215 16% 47%;
-    --accent: 189 94% 37%;
+    --accent: 160 84% 36%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
@@ -24,39 +24,43 @@
     --warning: 38 92% 50%;
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 221 83% 53%;
-    --cyan: 189 94% 43%;
+    --ring: 173 84% 32%;
+    --cyan: 173 70% 40%;
     --elevated: 0 0% 100%;
-    --footer: 222 47% 8%;
+    --footer: 240 6% 10%;
     --footer-foreground: 210 40% 98%;
+    --action: 22 90% 42%;
+    --action-foreground: 0 0% 100%;
   }
 
   .dark {
-    --background: 222 47% 8%;
-    --foreground: 210 40% 98%;
-    --card: 221 41% 14%;
-    --card-foreground: 210 40% 98%;
-    --popover: 217 33% 17%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217 91% 60%;
+    --background: 240 6% 7%;
+    --foreground: 0 0% 98%;
+    --card: 240 5% 11%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 5% 13%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 172 66% 45%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 221 39% 11%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 33% 17%;
-    --muted-foreground: 214 32% 84%;
-    --accent: 189 94% 43%;
+    --secondary: 240 5% 10%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 70%;
+    --accent: 160 64% 45%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62% 55%;
     --destructive-foreground: 0 0% 100%;
     --success: 160 72% 45%;
     --warning: 38 92% 50%;
-    --border: 217 33% 21%;
-    --input: 217 33% 21%;
-    --ring: 217 91% 60%;
-    --cyan: 189 94% 43%;
-    --elevated: 217 33% 17%;
-    --footer: 221 39% 11%;
-    --footer-foreground: 210 40% 98%;
+    --border: 240 4% 18%;
+    --input: 240 4% 18%;
+    --ring: 172 66% 45%;
+    --cyan: 172 60% 48%;
+    --elevated: 240 5% 13%;
+    --footer: 240 6% 5%;
+    --footer-foreground: 0 0% 98%;
+    --action: 28 92% 48%;
+    --action-foreground: 0 0% 100%;
   }
 
   html {
@@ -85,13 +89,25 @@
 
 @layer utilities {
   .bg-tech-gradient {
-    background-image: linear-gradient(135deg, #3b82f6, #06b6d4);
+    background-image: linear-gradient(135deg, #0d9488, #059669);
   }
 
   .text-tech-gradient {
-    background-image: linear-gradient(90deg, #3b82f6, #06b6d4);
+    background-image: linear-gradient(90deg, #0d9488, #10b981);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+
+  .btn-fill {
+    background-image: linear-gradient(180deg, #fb923c 0%, #ea580c 100%);
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 10px 22px -6px rgba(234, 88, 12, 0.55);
+  }
+
+  .btn-fill:hover {
+    filter: brightness(1.08);
+    box-shadow: 0 14px 28px -6px rgba(234, 88, 12, 0.65);
   }
 }

@@ -334,7 +334,7 @@ const ToolsPage = () => {
                           country: e.target.value,
                         })
                       }
-                      className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="w-full px-3 py-2 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
                     >
                       {countries.map((country) => (
                         <option key={country.id} value={country.id}>
@@ -449,7 +449,7 @@ const ToolsPage = () => {
 
                 <button
                   onClick={() => launchTool("market-calculator")}
-                  className="w-full mt-4 bg-primary text-primary-foreground py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center space-x-2"
+                  className="w-full mt-4 btn-fill py-2 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
                 >
                   <Play className="h-4 w-4" />
                   <span>Launch Full Calculator</span>
@@ -575,7 +575,7 @@ const ToolsPage = () => {
                 name: "Localization",
                 icon: <Globe className="h-6 w-6" />,
                 count: 3,
-                color: "bg-indigo-100 text-indigo-600",
+                color: "bg-primary/10 text-primary",
               },
               {
                 name: "Compliance",

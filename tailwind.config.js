@@ -48,8 +48,12 @@ export default {
           DEFAULT: 'hsl(var(--footer) / <alpha-value>)',
           foreground: 'hsl(var(--footer-foreground) / <alpha-value>)',
         },
+        action: {
+          DEFAULT: '#EA580C',
+          foreground: '#FFFFFF',
+        },
         cta: {
-          DEFAULT: '#0B1120',
+          DEFAULT: '#18181B',
           foreground: '#F8FAFC',
         },
         brand: {
@@ -60,13 +64,13 @@ export default {
           400: 'hsl(var(--cyan))',
           500: 'hsl(var(--primary))',
           600: 'hsl(var(--primary))',
-          700: 'hsl(221 83% 45%)',
+          700: 'hsl(173 80% 26%)',
           800: 'hsl(var(--primary))',
           900: 'hsl(var(--foreground))',
         },
       },
       boxShadow: {
-        glow: '0 8px 24px -8px hsl(var(--primary) / 0.45)',
+        glow: '0 10px 24px -6px rgba(234, 88, 12, 0.55)',
       },
       transitionDuration: {
         DEFAULT: '180ms',

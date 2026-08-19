@@ -151,7 +151,7 @@ const JobDetailsModal: React.FC<JobDetailsModalProps> = ({
                 <ul className="space-y-2">
                   {job.benefits.map((benefit, index) => (
                     <li key={index} className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
                       <span className="text-foreground">{benefit}</span>
                     </li>
                   ))}
@@ -212,7 +212,7 @@ const JobDetailsModal: React.FC<JobDetailsModalProps> = ({
               <div className="space-y-3">
                 <button 
                   onClick={() => onApply(job)}
-                  className="w-full bg-primary text-primary-foreground py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center space-x-2"
+                  className="w-full btn-fill py-3 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
                 >
                   <ExternalLink className="h-4 w-4" />
                   <span>Apply Now</span>

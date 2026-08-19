@@ -29,7 +29,7 @@ const Contact = () => {
     {
       icon: <Mail className="h-6 w-6" />,
       title: 'Email Us',
-      details: 'hello@pmafrica.com',
+      details: 'hello@techpod.com',
       subtext: 'We typically respond within 24 hours'
     },
     {
@@ -75,7 +75,7 @@ const Contact = () => {
               </p>
               <button 
                 onClick={() => setIsSubmitted(false)}
-                className="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200"
+                className="btn-fill px-6 py-3 rounded-lg transition-colors duration-200"
               >
                 Send Another Message
               </button>
@@ -207,7 +207,7 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full bg-primary text-primary-foreground px-6 py-4 rounded-lg hover:bg-primary/90 transition-all duration-200 font-semibold flex items-center justify-center space-x-2"
+                className="w-full btn-fill px-6 py-4 rounded-lg transition-all duration-200 font-semibold flex items-center justify-center space-x-2"
               >
                 <Send className="h-5 w-5" />
                 <span>Send Message</span>
@@ -239,7 +239,7 @@ const Contact = () => {
             {/* <div className="bg-accent p-6 rounded-xl">
               <h4 className="font-bold text-foreground mb-4">Quick Actions</h4>
               <div className="space-y-3">
-                <button className="w-full bg-primary text-primary-foreground px-4 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center space-x-2">
+                <button className="w-full btn-fill px-4 py-3 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2">
                   <Calendar className="h-4 w-4" />
                   <span>Schedule a Call</span>
                 </button>

@@ -95,7 +95,7 @@ const JobApplicationModal: React.FC<JobApplicationModalProps> = ({ isOpen, onClo
             Your application for {job.title} at {job.company} has been submitted successfully. 
             You'll hear back from the hiring team within 5-7 business days.
           </p>
-          <div className="bg-blue-50 p-4 rounded-lg">
+          <div className="bg-primary/10 p-4 rounded-lg">
             <p className="text-sm text-primary">
               💡 <strong>Next Steps:</strong> Check your email for confirmation and follow up on LinkedIn with the hiring manager.
             </p>
@@ -305,7 +305,7 @@ const JobApplicationModal: React.FC<JobApplicationModalProps> = ({ isOpen, onClo
             </button>
             <button
               type="submit"
-              className="flex-1 bg-primary text-primary-foreground py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center space-x-2"
+              className="flex-1 btn-fill py-3 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
             >
               <Send className="h-4 w-4" />
               <span>Submit Application</span>
